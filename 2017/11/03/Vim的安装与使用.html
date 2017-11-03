@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    
+
+    
+
+    
+
+
+<!-- Baidu Push -->
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+<!-- End Baidu Push -->
+
+
+    <meta charset="utf-8">
+    
+    <meta name="google-site-verification" content="true">
+    <meta name="baidu-site-verification" content="97dbRVWfVh" />
+    <meta name="sogou_site_verification" content="AIePRXkUI4"/>
+    
+    
+    <link rel="canonical" href="http://www.kotlinandroid.net/2017/11/03/Vim的安装与使用.html">
+    
+    
+    <title>Vim的安装与使用 | KotlinAndroid | 一个专注发布KotlinAndroid相关资源与优秀文章的技术网站</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Vim">
+    <meta name="description" content="VimVim的配置以spf-13为例子项目地址:   https://github.com/spf13/spf13-vim Vim的安装 Linux, *nix, Mac OSX Installation  The easiest way to install spf13-vim is to use our automatic installer by simply copying and pas">
+<meta name="keywords" content="Vim">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vim的安装与使用">
+<meta property="og:url" content="https://github.com/itgoyo/2017/11/03/Vim的安装与使用.html">
+<meta property="og:site_name" content="KotlinAndroid">
+<meta property="og:description" content="VimVim的配置以spf-13为例子项目地址:   https://github.com/spf13/spf13-vim Vim的安装 Linux, *nix, Mac OSX Installation  The easiest way to install spf13-vim is to use our automatic installer by simply copying and pas">
+<meta property="og:image" content="https://github.com/arts/kotlin_group.jpg">
+<meta property="og:updated_time" content="2017-11-03T08:56:55.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Vim的安装与使用">
+<meta name="twitter:description" content="VimVim的配置以spf-13为例子项目地址:   https://github.com/spf13/spf13-vim Vim的安装 Linux, *nix, Mac OSX Installation  The easiest way to install spf13-vim is to use our automatic installer by simply copying and pas">
+<meta name="twitter:image" content="https://github.com/arts/kotlin_group.jpg">
+    
+        <link rel="alternative" href="/atom.xml" title="KotlinAndroid" type="application/atom+xml">
+    
+    <link rel="shortcut icon" href="/img/kotlin.png">
+    <link rel="stylesheet" href="/css/style.css?v=1.5.2">
+    <script>window.lazyScripts=[]</script>
+
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?c16d3c10c9ea6c6fe749d9926d52b0d6";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" style="
+    width: 300px;"class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand" style="
+          width: 300px;">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/kotlin_250x250.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">itgoyo</h5>
+          <a href="mailto:kotlinandroid@kotlinandroid.net" title="kotlinandroid@kotlinandroid.net" class="mail">kotlinandroid@kotlinandroid.net</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col" style="
+        width: 300px;">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="http://www.kotlinandroid.net/website"  >
+                <i class="icon icon-lg icon-html5"></i>
+                官网
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                文章
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/books"  >
+                <i class="icon icon-lg icon-book"></i>
+                书籍
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/movies"  >
+                <i class="icon icon-lg icon-film"></i>
+                电影
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://www.kotlinandroid.net/album"  >
+                <i class="icon icon-lg icon-photo"></i>
+                相册
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="Mailto:itgoyo@kotlinandroid.net"  >
+                <i class="icon icon-lg icon-envelope"></i>
+                邮件
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://www.kotlinandroid.net/timeline"  >
+                <i class="icon icon-lg icon-calendar"></i>
+                时间轴
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/itgoyo"  >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://www.kotlinandroid.net/resume"  >
+                <i class="icon icon-lg icon-file-text"></i>
+                Résumé
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://hukai.me/android-training-course-in-chinese/index.html"  >
+                <i class="icon icon-lg icon-android"></i>
+                官方培训课程
+              </a>
+            </li>
+        
+
+      <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=300 height=270 src="https://music.163.com/outchain/player?type=0&id=120897804&auto=1&height=430"></iframe>
+
+        <div class="div_right_bottom" align="center">
+          <img src="http://open.weixin.qq.com/qr/code/?username=kotlinandroid">
+          微信公众号
+          </div>
+
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Vim的安装与使用</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Vim的安装与使用</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2017-11-03T08:55:29.000Z" itemprop="datePublished" class="page-time">
+  2017-11-03
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Vim/">Vim</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Vim"><span class="post-toc-number">1.</span> <span class="post-toc-text">Vim</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Vim的配置以spf-13为例子"><span class="post-toc-number">1.0.1.</span> <span class="post-toc-text">Vim的配置以spf-13为例子</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Vim的安装"><span class="post-toc-number">1.0.2.</span> <span class="post-toc-text">Vim的安装</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Vim插件的介绍"><span class="post-toc-number">2.</span> <span class="post-toc-text">Vim插件的介绍</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Vundle-The-best-plugin-manager"><span class="post-toc-number">2.0.1.</span> <span class="post-toc-text">Vundle(The best plugin manager)</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#NERDTree-file-navigation"><span class="post-toc-number">2.0.2.</span> <span class="post-toc-text">NERDTree(file navigation)</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#ctrlp-fast-file-finder"><span class="post-toc-number">2.0.3.</span> <span class="post-toc-text">ctrlp(fast file finder)</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#neocomplcache-autocomplete"><span class="post-toc-number">2.0.4.</span> <span class="post-toc-text">neocomplcache(autocomplete++)</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Tagbar-tag-generation-and-navigation"><span class="post-toc-number">2.0.5.</span> <span class="post-toc-text">Tagbar(tag generation and navigation)</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#关于在Mac端ctags无效的解决方法"><span class="post-toc-number">2.0.6.</span> <span class="post-toc-text">关于在Mac端ctags无效的解决方法</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Preview-To-preview-markdown-format-you-need-to-install-bluecloth-gem"><span class="post-toc-number">2.0.7.</span> <span class="post-toc-text">Preview: To preview markdown format you need to install bluecloth gem</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Linux出现的问题"><span class="post-toc-number">2.0.8.</span> <span class="post-toc-text">Linux出现的问题</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#提示找不到tag文件"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">提示找不到tag文件</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#窗口切换快捷键"><span class="post-toc-number">2.1.1.</span> <span class="post-toc-text">窗口切换快捷键</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#关闭分屏"><span class="post-toc-number">2.1.2.</span> <span class="post-toc-text">关闭分屏</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#打开多个窗口了之后，怎么快速切换"><span class="post-toc-number">2.1.3.</span> <span class="post-toc-text">打开多个窗口了之后，怎么快速切换</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#取消查找遗留的边框"><span class="post-toc-number">2.1.4.</span> <span class="post-toc-text">取消查找遗留的边框</span></a></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-Vim的安装与使用"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Vim的安装与使用</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2017-11-03 16:55:29" datetime="2017-11-03T08:55:29.000Z"  itemprop="datePublished">2017-11-03</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Vim/">Vim</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h2 id="Vim"><a href="#Vim" class="headerlink" title="Vim"></a>Vim</h2><h4 id="Vim的配置以spf-13为例子"><a href="#Vim的配置以spf-13为例子" class="headerlink" title="Vim的配置以spf-13为例子"></a>Vim的配置以spf-13为例子</h4><p>项目地址:   <a href="https://github.com/spf13/spf13-vim">https://github.com/spf13/spf13-vim</a></p>
+<h4 id="Vim的安装"><a href="#Vim的安装" class="headerlink" title="Vim的安装"></a>Vim的安装</h4><ul>
+<li>Linux, *nix, Mac OSX Installation</li>
+</ul>
+<p>The easiest way to install spf13-vim is to use our automatic installer by simply copying and pasting the following line into a terminal. This will install spf13-vim and backup your existing vim configuration. If you are upgrading from a prior version (before 3.0) this is also the recommended installation.</p>
+<p>Requires Git 1.7+ and Vim 7.3+</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">curl https://j.mp/spf13-vim3 -L &gt; spf13-vim.sh &amp;&amp; sh spf13-vim.sh</div></pre></td></tr></table></figure>
+<p>If you have a bash-compatible shell you can run the script directly:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sh &lt;(curl https://j.mp/spf13-vim3 -L)</div></pre></td></tr></table></figure></p>
+<p>此过程会比较长，包括插件的下载还有安装，这个过程将近1个多小时</p>
+<ul>
+<li>Installing on Windows</li>
+</ul>
+<p>On Windows and *nix Git and Curl are required. Also, if you haven’t done so already, you’ll need to install Vim. The quickest option to install all three dependencies (Git, Curl, Vim and spf13-vim) is via Chocolatey NuGet. After installing Chocolatey, execute the following commands on the command prompt:</p>
+<p>Install with cmd.exe(run as admin mode)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">@powershell -NoProfile -ExecutionPolicy Bypass -Command &quot;iex ((New-Object System.Net.WebClient).DownloadString(&apos;https://chocolatey.org/install.ps1&apos;))&quot; &amp;&amp; SET &quot;PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin&quot;</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">C:\&gt; choco install spf13-vim</div></pre></td></tr></table></figure>
+<p>一直Y，整个过程大概2h左右</p>
+<h2 id="Vim插件的介绍"><a href="#Vim插件的介绍" class="headerlink" title="Vim插件的介绍"></a>Vim插件的介绍</h2><ul>
+<li><h4 id="Vundle-The-best-plugin-manager"><a href="#Vundle-The-best-plugin-manager" class="headerlink" title="Vundle(The best plugin manager)"></a>Vundle(The best plugin manager)</h4></li>
+</ul>
+<p>Vundle is an excellent system built on the same principles as Pathogen, but with an integrated plugin management system that is Git and Github aware.</p>
+<p>spf13-vim uses the Vundle plugin management system to have a well organized vim directory (Similar to mac’s app folders). Vundle also ensures that the latest versions of your plugins are installed and makes it easy to keep them up to date.</p>
+<ul>
+<li><h4 id="NERDTree-file-navigation"><a href="#NERDTree-file-navigation" class="headerlink" title="NERDTree(file navigation)"></a>NERDTree(file navigation)</h4></li>
+</ul>
+<p>NERDTree is a file explorer plugin that provides “project drawer” functionality to your vim editing. You can learn more about it with :help NERDTree or checkout my post on NERDTree.</p>
+<p>Use <code>Ctrl+e</code> to toggle NERDTree</p>
+<ul>
+<li><h4 id="ctrlp-fast-file-finder"><a href="#ctrlp-fast-file-finder" class="headerlink" title="ctrlp(fast file finder)"></a>ctrlp(fast file finder)</h4></li>
+</ul>
+<p>Ctrlp replaces the Command-T plugin with a 100% viml plugin. It provides an intuitive and fast mechanism to load files from the file system (with regex and fuzzy find), from open buffers, and from recently used files.</p>
+<p>Use <code>Ctrl+p</code> to toggle Ctrlp</p>
+<ul>
+<li><h4 id="neocomplcache-autocomplete"><a href="#neocomplcache-autocomplete" class="headerlink" title="neocomplcache(autocomplete++)"></a>neocomplcache(autocomplete++)</h4></li>
+</ul>
+<p>NeoComplCache is an amazing autocomplete plugin with additional support for snippets. It can complete simulatiously from the dictionary, buffer, omnicomplete and snippets. This is the one true plugin that brings Vim autocomplete on par with the best editors.</p>
+<p>Use <code>Ctrl+n</code> to toggle neocomplcache</p>
+<ul>
+<li><h4 id="Tagbar-tag-generation-and-navigation"><a href="#Tagbar-tag-generation-and-navigation" class="headerlink" title="Tagbar(tag generation and navigation)"></a>Tagbar(tag generation and navigation)</h4></li>
+</ul>
+<p>spf13-vim includes the Tagbar plugin. This plugin requires exuberant-ctags and will automatically generate tags for your open files. It also provides a panel to navigate easily via tags</p>
+<p>Use <code>,tt</code> to toggle neocomplcache</p>
+<h4 id="关于在Mac端ctags无效的解决方法"><a href="#关于在Mac端ctags无效的解决方法" class="headerlink" title="关于在Mac端ctags无效的解决方法"></a>关于在Mac端ctags无效的解决方法</h4><p><a href="https://brew.sh/" target="_blank" rel="external">https://brew.sh/</a></p>
+<p><a href="https://github.com/universal-ctags/ctags">https://github.com/universal-ctags/ctags</a></p>
+<p><a href="https://github.com/universal-ctags/homebrew-universal-ctags">https://github.com/universal-ctags/homebrew-universal-ctags</a></p>
+<hr>
+<p>在Windows端，如果想切换到别的盘符进行操作的话,使用</p>
+<p><code>:NERDTree D:\\</code></p>
+<p>进行目录的跳转</p>
+<hr>
+<h4 id="Preview-To-preview-markdown-format-you-need-to-install-bluecloth-gem"><a href="#Preview-To-preview-markdown-format-you-need-to-install-bluecloth-gem" class="headerlink" title="Preview: To preview markdown format you need to install bluecloth gem"></a>Preview: To preview markdown format you need to install bluecloth gem</h4><p>在使用previewMarkdown的时候出现了<br><code>Preview: To preview markdown format you need to install bluecloth gem</code></p>
+<p>解决方法：</p>
+<ul>
+<li><p><code>sudo gem install redcarpet</code></p>
+</li>
+<li><p><code>sudo gem install bluecloth</code></p>
+</li>
+</ul>
+<h4 id="Linux出现的问题"><a href="#Linux出现的问题" class="headerlink" title="Linux出现的问题"></a>Linux出现的问题</h4><p>can’t find header files for ruby at /usr/lib/ruby/include/ruby.h</p>
+<p>解决方法:sudo apt-get install ruby-dev</p>
+<h3 id="提示找不到tag文件"><a href="#提示找不到tag文件" class="headerlink" title="提示找不到tag文件"></a>提示找不到tag文件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">用法:</div><div class="line">    1.生成标签文件(cmd到项目的目录中执行)</div><div class="line">        在当前目录下(运行$提示符后面的命令):</div><div class="line">        $ctags -R .</div><div class="line">      -R表示recursive，递归,为当前目录及其子目录中的c文件生成标签文件。最后一个.表示在当前目录。</div><div class="line">        运行完当前目录会多一个文件tags,就是c标签的索引文件。</div><div class="line">    2.跳转</div><div class="line">        1)用vim打开一个已经建过标签的c文件    </div><div class="line">        2)ctrl+] 找到光标所在位置的标签定义的地方</div><div class="line">        3)ctrl+t 回到跳转之前的标签处</div><div class="line">    3.窗口显示方法</div><div class="line">         命令Tagbar toggle打开相应的方法窗口显示</div><div class="line">    注意：此时运行vim，必须在&quot;tags&quot;文件所在的目录下运行。否则，运行它会找不到&quot;tags&quot;文件，而需要在vim中用&quot;:set tags=&quot;命令设定&quot;tags&quot;文件的路径。对于一个稍微大点的项目，你可能在任何一个目录下打开vim，然而在每个目录下都生成一个tags文件并不 是个好主意，那么如何解决呢？方法是在.vimrc中增加一行：</div><div class="line">        set tags=tags;/</div><div class="line">    这是告诉vim在当前目录找不到tags文件时请到上层目录查找。</div></pre></td></tr></table></figure>
+<h4 id="窗口切换快捷键"><a href="#窗口切换快捷键" class="headerlink" title="窗口切换快捷键"></a>窗口切换快捷键</h4><p><code>Ctrl+w+w</code></p>
+<h4 id="关闭分屏"><a href="#关闭分屏" class="headerlink" title="关闭分屏"></a>关闭分屏</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">关闭当前窗口。</div><div class="line">Ctrl+W c</div><div class="line">关闭当前窗口，如果只剩最后一个了，则退出Vim。</div><div class="line">Ctrl+W q</div></pre></td></tr></table></figure>
+<h4 id="打开多个窗口了之后，怎么快速切换"><a href="#打开多个窗口了之后，怎么快速切换" class="headerlink" title="打开多个窗口了之后，怎么快速切换"></a>打开多个窗口了之后，怎么快速切换</h4><p><code>:buffers 列表  :bn下一个 :bp 上一个  :b17</code></p>
+<h4 id="取消查找遗留的边框"><a href="#取消查找遗留的边框" class="headerlink" title="取消查找遗留的边框"></a>取消查找遗留的边框</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">set: nohlseach</div></pre></td></tr></table></figure>
+<hr>
+<p>如果你有兴趣加入我们，请直接关注公众号 Kotlinandroid ，或者加 QQ 群：465280882</p>
+<p><img src="/arts/kotlin_group.jpg" alt=""></p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2017-11-03T08:56:55.000Z" itemprop="dateUpdated">2017-11-03 16:56:55</time>
+</span><br>
+
+
+        
+    </div>
+    <footer>
+        <a href="https://github.com/itgoyo">
+            <img src="/img/kotlin_250x250.jpg" alt="itgoyo">
+            itgoyo
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Vim/">Vim</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://github.com/itgoyo/2017/11/03/Vim的安装与使用.html&title=《Vim的安装与使用》 — KotlinAndroid&pic=https://github.com/itgoyo/img/kotlin_250x250.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://github.com/itgoyo/2017/11/03/Vim的安装与使用.html&title=《Vim的安装与使用》 — KotlinAndroid&source=talk is cheap,show me the girl." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://github.com/itgoyo/2017/11/03/Vim的安装与使用.html" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Vim的安装与使用》 — KotlinAndroid&url=https://github.com/itgoyo/2017/11/03/Vim的安装与使用.html&via=https://github.com/itgoyo" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://github.com/itgoyo/2017/11/03/Vim的安装与使用.html" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2017/11/03/Oh-My-Zsh.html" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Oh-My-Zsh</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2017/10/27/Java多态的理解.html" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Java多态的理解</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+<section class="comments" id="comments">
+    <div id="disqus_thread"></div>
+    <script>
+    var disqus_shortname = 'itgoyo';
+    lazyScripts.push('//' + disqus_shortname + '.disqus.com/embed.js')
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitment_thread"></div>
+    <link rel="stylesheet" href="//unpkg.com/gitment/style/default.css">
+    <!-- <script src="//unpkg.com/gitment/dist/gitment.browser.js"></script> -->
+    <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+    <script>
+        var gitment = new Gitment({
+            owner: 'itgoyo',
+            repo: 'itgoyo.github.io',
+            oauth: {
+                client_id: '464e7c112346fd6daabb',
+                client_secret: '3f78aa47b168a9788b888238a610dff1ac6e51ac',
+            },
+        })
+        gitment.render('comments')
+    </script>
+</section>
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        奖励一杯咖啡!
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/assets/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/assets/img/wechat.jpg" data-alipay="/assets/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+
+    <div class="bottom">
+  
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            <span>itgoyo &copy; 2017</span>  &nbsp&nbsp&nbsp 作者Github地址 欢迎关注 <a href="https://github.com/itgoyo" target="_blank">itgoyo</a>
+              <a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a>
+        </p>
+        <p>
+        感谢西部数码提供<a href="http://www.west.cn/index.asp?ReferenceID=1232730"
+        target="_blank">虚拟主机</a>
+        </p>
+        <p>
+            <span>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://github.com/itgoyo/2017/11/03/Vim的安装与使用.html&title=《Vim的安装与使用》 — KotlinAndroid&pic=https://github.com/itgoyo/img/kotlin_250x250.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://github.com/itgoyo/2017/11/03/Vim的安装与使用.html&title=《Vim的安装与使用》 — KotlinAndroid&source=talk is cheap,show me the girl." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://github.com/itgoyo/2017/11/03/Vim的安装与使用.html" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Vim的安装与使用》 — KotlinAndroid&url=https://github.com/itgoyo/2017/11/03/Vim的安装与使用.html&via=https://github.com/itgoyo" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://github.com/itgoyo/2017/11/03/Vim的安装与使用.html" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACu0lEQVR42u3aS3LCQAwFwNz/0qQq22Dz9Blg0V5RxPG4ZzESkn5+4uvxd/3/fHVncs/9N9Vnji48PDy81qtfXfcLXC15def9/ffr3n9/+Xw8PDy8Y7wkGCTIPITcr9ILTnh4eHjfxrt6iWpQycNMdePw8PDwvpOX/zVJeb8uMODh4eHFvORwr8Lyou0jvg7WWvDw8PBi3qQB9qnPb+rv4eHh4RW76vmBmy+cpNdbFx4eHt4JXtKen08xTcYIqo206BcDHh4e3oC325SaFGd72/FidTw8PLwDvF75dbe822uPVUMRHh4e3hav2pqqBoxkd+fberm5eHh4eB/i9QLApJ2WF5GjWIeHh4e3ysuP7OoCWwGgV7AoNMDw8PDwirzdBHrSVJsUbaP4g4eHh3eA1zvKqyXaagjpJehRfw8PDw+vf0CWD9zepuy2xHI8Hh4e3gnevFA7ecVqMbc3KIaHh4e3xcv/IU+je0XeQoqcPxkPDw/vAK+a4PbGDqrJeh5mCsViPDw8vCXe/Qv1lpkUIPLAED0NDw8P7wAvGWzKF05CSL6hvXEHPDw8vNO8HJMXfLeCR6/p9WRoAA8PD2+VNxl7ai5W3KZ5Qw4PDw/vPbxJgTUPBlujA+XaMB4eHt6YtzUi0PsmqpTElZV89AEPDw+vx6sOP00a/EmBo1qBftFgw8PDw3sLbzfZTUYHtgoTT56Mh4eHd4BXLUlEx3GxcZU/rfo+eHh4eCd4j+KVhIp5USNJu6N3wMPDwzvAq/aJJsNS+TBBnkA3K9N4eHh4q7/Tq4dv0r7qpdSTIISHh4f3Hl61AZYXHaqlikmKfPm7AQ8PD+9DvGqLKwf30uVopAAPDw/va3jVIz7PcqsFXzw8PLxP8XrFiCThrn6fF0Gid8DDw8M7wFub2wqS5uogQr7KWn8PDw8P7+7OX2NbsYaVp/pmAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+
+lazyScripts.push('//s95.cnzz.com/z_stat.php?id=1261686164&web_id=1261686164')
+
+</script>
+
+<script src="/js/main.min.js?v=1.5.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.5.2" async></script>
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+</body>
+</html>
