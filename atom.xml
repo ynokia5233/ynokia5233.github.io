@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://github.com/itgoyo/"/>
-  <updated>2017-11-03T09:02:50.000Z</updated>
+  <updated>2017-11-06T01:20:24.000Z</updated>
   <id>https://github.com/itgoyo/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Putty+Xming在Windows端显示Linux图形化界面GUI</title>
+    <link href="https://github.com/itgoyo/2017/11/06/Putty-Xming%E5%9C%A8Windows%E7%AB%AF%E6%98%BE%E7%A4%BALinux%E5%9B%BE%E5%BD%A2%E5%8C%96%E7%95%8C%E9%9D%A2GUI.html"/>
+    <id>https://github.com/itgoyo/2017/11/06/Putty-Xming在Windows端显示Linux图形化界面GUI.html</id>
+    <published>2017-11-06T01:19:04.000Z</published>
+    <updated>2017-11-06T01:20:24.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="一、Linux配置"><a href="#一、Linux配置" class="headerlink" title="一、Linux配置"></a>一、Linux配置</h3><p>#apt-get install openssh-server</p><h3 id="二、Windows"><a href="#二、Windows" class="headerlink" title="二、Windows"></a>二、Windows</h3><p>下载并安装Xming客户端<br><a href="http://sourceforge.net/projects/xming" target="_blank" rel="external">http://sourceforge.net/projects/xming</a></p><p>完了之后出现sshd的字样表明服务器开启成功。</p><p>安装并启动， 无需配置<br>下载并安装putty<br><a href="http://the.earth.li/~sgtatham/putty/latest/x86/putty.exe" target="_blank" rel="external">http://the.earth.li/~sgtatham/putty/latest/x86/putty.exe</a></p><p><img src="http://omvbl46i3.bkt.clouddn.com/17-11-5/62626614.jpg" alt=""></p><p><img src="http://omvbl46i3.bkt.clouddn.com/17-11-5/90740534.jpg" alt=""></p><p><img src="http://omvbl46i3.bkt.clouddn.com/17-11-5/13122657.jpg" alt=""></p><p><img src="http://omvbl46i3.bkt.clouddn.com/17-11-5/458619.jpg" alt=""></p><p><img src="http://omvbl46i3.bkt.clouddn.com/17-11-5/84274553.jpg" alt=""></p><p><img src="http://omvbl46i3.bkt.clouddn.com/17-11-5/70170489.jpg" alt=""></p><h3 id="三、配置Putty"><a href="#三、配置Putty" class="headerlink" title="三、配置Putty"></a>三、配置Putty</h3><h4 id="首先获取Linux服务器的ip地址"><a href="#首先获取Linux服务器的ip地址" class="headerlink" title="首先获取Linux服务器的ip地址"></a>首先获取Linux服务器的ip地址</h4><p>在终端输入: ifconfig 即可查看。</p><h4 id="填写配置信息"><a href="#填写配置信息" class="headerlink" title="填写配置信息"></a>填写配置信息</h4><p><img src="http://omvbl46i3.bkt.clouddn.com/17-11-5/8035428.jpg" alt=""></p><p>Putty中开启X11支持</p><p><img src="http://omvbl46i3.bkt.clouddn.com/17-11-5/88604763.jpg" alt=""></p><p>Linux里边的ssh文件配置也要打开</p><p>要允许Linux主机上的SSH X转发，查看 /etc/ssh/sshd_config 文件，加入以下一行，</p><p>X11Forwrding yes</p><p>到此配置就结束了，想要测试是否成功的话，可以在终端输入:xclock</p><p>如果出现一个悬浮的时钟则表明配置成功了，或者你可以打开Linux上面的一张图片如果显示也代表成功了，命令如下</p><p>eog xxx.jpg</p><hr><p>如果你有兴趣加入我们，请直接关注公众号 Kotlinandroid ，或者加 QQ 群：465280882</p><p><img src="/arts/kotlin_group.jpg" alt=""></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;一、Linux配置&quot;&gt;&lt;a href=&quot;#一、Linux配置&quot; class=&quot;headerlink&quot; title=&quot;一、Linux配置&quot;&gt;&lt;/a&gt;一、Linux配置&lt;/h3&gt;&lt;p&gt;#apt-get install openssh-server&lt;/p&gt;
+&lt;h3 id
+      
+    
+    </summary>
+    
+      <category term="Linux" scheme="https://github.com/itgoyo/categories/Linux/"/>
+    
+    
+      <category term="Linux" scheme="https://github.com/itgoyo/tags/Linux/"/>
+    
+  </entry>
   
   <entry>
     <title>Oh-My-Zsh</title>
