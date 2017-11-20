@@ -29,7 +29,7 @@
                 y: y
             };
         },
-        docEl = ua.indexOf('Firefox') !== -1 ? d.documentElement : body;
+        docEl = d.documentElement;
 
     var Blog = {
         goTop: function() {
