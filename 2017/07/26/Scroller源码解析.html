@@ -52,8 +52,8 @@
 <meta property="og:site_name" content="ITGOYO技术站">
 <meta property="og:description" content="项目地址： https://github.com/itgoyo/AndroidSource-Analysis 简介： Android源码分析，让你更清楚的理解每一个组件的功能与用法。  本文分析版本: Android API 22  1. 简介Android开发中，如果我们希望使一个View滑动的话，除了使用属性动画外。我们还可以使用系统提供给我们的两个类Scroller和OverScrolle">
 <meta property="og:image" content="https://img.shields.io/github/stars/itgoyo/AndroidSource-Analysis.svg?style=social&label=Star">
-<meta property="og:image" content="https://github.com/arts/kotlin_group.jpg">
-<meta property="og:updated_time" content="2017-07-26T11:58:54.000Z">
+<meta property="og:image" content="https://github.com/assets/getqrcode.jpeg">
+<meta property="og:updated_time" content="2017-11-23T13:09:55.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Scroller源码解析">
 <meta name="twitter:description" content="项目地址： https://github.com/itgoyo/AndroidSource-Analysis 简介： Android源码分析，让你更清楚的理解每一个组件的功能与用法。  本文分析版本: Android API 22  1. 简介Android开发中，如果我们希望使一个View滑动的话，除了使用属性动画外。我们还可以使用系统提供给我们的两个类Scroller和OverScrolle">
@@ -334,8 +334,7 @@ var _hmt = _hmt || [];
 <p>我并没有看懂这段代码的实际意义。网上也没有找到比较清晰的解释。通过<code>debug</code>得知<code>SPLINE_POSITION</code>是一个长度为<code>101</code>并且从<code>0-1</code>递增数组。猜想这应该是一个函数模型并且最终用于计算出滑动过程中的加速度与位置。至此<code>Scroller</code>的两个主要方法的实现我们就分析完了。</p>
 <h2 id="4-OverScroller解析"><a href="#4-OverScroller解析" class="headerlink" title="4. OverScroller解析"></a>4. OverScroller解析</h2><p><code>OverScroller</code>是对<code>Scroller</code>的拓展，它在<code>Scroller</code>的基础上拓展出了更多的方法。<code>OverScroller</code>的<code>fling</code>方法支持滑动到终点之后并超出一段距离并返回，类似于弹性效果。另外一个<code>springBack()</code>方法是指将指定的点平滑滚动到指定的终点上。这个终点由设置的参数决定。原理我们就不再探究了，大家可以自行研究这两个类的差别。最后具体的使用方法在文章最上面的<code>demo</code>里都有提供。可以<code>clone</code>下来帮助理解。</p>
 <hr>
-<p>如果你有兴趣加入我们，请直接关注公众号 Kotlinandroid ，或者加 QQ 群：465280882</p>
-<p><img src="/arts/kotlin_group.jpg" alt=""></p>
+<div align="center"><br><br>发现更多有趣好玩的，欢迎关注我的微信公众号<br><br><img src="/assets/getqrcode.jpeg" alt=""><br></div>
 
         </div>
 
@@ -343,7 +342,7 @@ var _hmt = _hmt || [];
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2017-07-26T11:58:54.000Z" itemprop="dateUpdated">2017-07-26 19:58:54</time>
+    最后更新时间：<time datetime="2017-11-23T13:09:55.000Z" itemprop="dateUpdated">2017-11-23 21:09:55</time>
 </span><br>
 
 

@@ -56,8 +56,8 @@
 <meta property="og:image" content="https://github.com/itgoyo/2017/07/26/images/SwipeRefreshLayout2">
 <meta property="og:image" content="https://dn-coding-net-production-pp.qbox.me/8e02212d-b364-4df8-bfaa-47f3084f89e7.png">
 <meta property="og:image" content="https://dn-coding-net-production-pp.qbox.me/8df6d458-700b-4ec5-b731-c6b8c34cdddc.png">
-<meta property="og:image" content="https://github.com/arts/kotlin_group.jpg">
-<meta property="og:updated_time" content="2017-07-26T12:05:30.000Z">
+<meta property="og:image" content="https://github.com/assets/getqrcode.jpeg">
+<meta property="og:updated_time" content="2017-11-23T13:10:31.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SwipeRefreshLayout源码分析">
 <meta name="twitter:description" content="项目地址： https://github.com/itgoyo/AndroidSource-Analysis 简介： Android源码分析，让你更清楚的理解每一个组件的功能与用法。 简介官方文档 SwipeRefreshLayout 是一个下拉刷新控件，几乎可以包裹一个任何可以滚动的内容（ListView GridView ScrollView RecyclerView），可以自动识别垂直滚动">
@@ -352,8 +352,7 @@ var _hmt = _hmt || [];
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">private</span> Animation.AnimationListener mRefreshListener = <span class="keyword">new</span> Animation.AnimationListener() &#123;</div><div class="line">   <span class="comment">// .. 省略代码</span></div><div class="line">   <span class="meta">@Override</span></div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onAnimationEnd</span><span class="params">(Animation animation)</span> </span>&#123;</div><div class="line">       <span class="keyword">if</span> (mRefreshing) &#123;</div><div class="line">           mProgress.setAlpha(MAX_ALPHA); <span class="comment">//确保刷新圆圈中间的进度条是完全不透明了</span></div><div class="line">           mProgress.start();</div><div class="line">           <span class="keyword">if</span> (mNotify) &#123; <span class="comment">// 当 mNotify 为 true 时才会回调 onRefresh</span></div><div class="line">               <span class="keyword">if</span> (mListener != <span class="keyword">null</span>) &#123;</div><div class="line">                   <span class="comment">// 回调 listener 的 onRefresh 方法</span></div><div class="line">                   mListener.onRefresh();</div><div class="line">               &#125;</div><div class="line">           &#125;</div><div class="line">           mCurrentTargetOffsetTop = mCircleView.getTop();</div><div class="line">       &#125; <span class="keyword">else</span> &#123;</div><div class="line">           reset();</div><div class="line">       &#125;</div><div class="line">   &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>分析 SwipeRefreshLayout 的流程就是按照平时我们自定义 <code>ViewGroup</code> 的流程，但是其中也有好多需要我们借鉴的地方，如何使用 NestedScrolling相关机制 ，多点触控的处理，onMeasure 中减去了 padding，如何判断子 View 是否可滚动，如何确定 ViewGroup 中某一个 View 的索引等。<br>此外，一个好的下拉刷新框架不仅仅要兼容各种滚动的子控件，还要考虑自己要兼容 NestedScrollingChild 的情况，比如放到 CooCoordinatorLayout 的情况，目前大多数开源的下拉刷新好像都没有达到这个要求，一般都是只考虑了内部嵌套滚动子视图的情况，没有考虑自己作为滚动子视图的情况。</p>
 <hr>
-<p>如果你有兴趣加入我们，请直接关注公众号 Kotlinandroid ，或者加 QQ 群：465280882</p>
-<p><img src="/arts/kotlin_group.jpg" alt=""></p>
+<div align="center"><br><br>发现更多有趣好玩的，欢迎关注我的微信公众号<br><br><img src="/assets/getqrcode.jpeg" alt=""><br></div>
 
         </div>
 
@@ -361,7 +360,7 @@ var _hmt = _hmt || [];
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2017-07-26T12:05:30.000Z" itemprop="dateUpdated">2017-07-26 20:05:30</time>
+    最后更新时间：<time datetime="2017-11-23T13:10:31.000Z" itemprop="dateUpdated">2017-11-23 21:10:31</time>
 </span><br>
 
 
