@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    
+
+    
+
+    
+
+
+<!-- Baidu Push -->
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+<!-- End Baidu Push -->
+
+
+    <meta charset="utf-8">
+    
+    <meta name="google-site-verification" content="true">
+    <meta name="baidu-site-verification" content="97dbRVWfVh" />
+    <meta name="sogou_site_verification" content="AIePRXkUI4"/>
+    
+    
+    <link rel="canonical" href="http://www.kotlinandroid.net/2017/11/24/给初学者的RxJava2教程.html">
+    
+    
+    <title>给初学者的RxJava2教程 | ITGOYO技术站 | 一个专注发布技术相关与优秀文章的技术网站</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Android">
+    <meta name="description" content="Rxjava2入门最通俗易懂的教程">
+<meta name="keywords" content="Rxjava2">
+<meta property="og:type" content="article">
+<meta property="og:title" content="给初学者的RxJava2教程">
+<meta property="og:url" content="https://github.com/itgoyo/2017/11/24/给初学者的RxJava2教程.html">
+<meta property="og:site_name" content="ITGOYO技术站">
+<meta property="og:description" content="Rxjava2入门最通俗易懂的教程">
+<meta property="og:image" content="http://omvbl46i3.bkt.clouddn.com/3f43378ea9f38feb6e2e2e70ef709230.png">
+<meta property="og:image" content="http://omvbl46i3.bkt.clouddn.com/f4d1ec5519b3d5d4e48fcac83ec78841.png">
+<meta property="og:image" content="http://omvbl46i3.bkt.clouddn.com/d6cbd74dc4e4d4f82efc28382a4dfb57.png">
+<meta property="og:image" content="http://omvbl46i3.bkt.clouddn.com/48bb5501aa9ad00a5bde8ba14b94c150.png">
+<meta property="og:image" content="https://github.com/assets/getqrcode.jpeg">
+<meta property="og:updated_time" content="2017-11-24T14:29:32.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="给初学者的RxJava2教程">
+<meta name="twitter:description" content="Rxjava2入门最通俗易懂的教程">
+<meta name="twitter:image" content="http://omvbl46i3.bkt.clouddn.com/3f43378ea9f38feb6e2e2e70ef709230.png">
+    
+        <link rel="alternative" href="/atom.xml" title="ITGOYO技术站" type="application/atom+xml">
+    
+    <link rel="shortcut icon" href="/img/kotlin.png">
+    <link rel="stylesheet" href="/css/style.css?v=1.5.2">
+    <script>window.lazyScripts=[]</script>
+
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?c16d3c10c9ea6c6fe749d9926d52b0d6";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" style="
+    width: 300px;"class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand" style="
+          width: 300px;">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/kotlin_250x250.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">itgoyo</h5>
+          <a href="mailto:itgoyo@gmail.com" title="itgoyo@gmail.com" class="mail">itgoyo@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col" style="
+        width: 300px;">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="http://www.kotlinandroid.net/website"  >
+                <i class="icon icon-lg icon-html5"></i>
+                官网
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                文章
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/books"  >
+                <i class="icon icon-lg icon-book"></i>
+                书籍
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/movies"  >
+                <i class="icon icon-lg icon-film"></i>
+                电影
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://www.kotlinandroid.net/album"  >
+                <i class="icon icon-lg icon-photo"></i>
+                相册
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="Mailto:itgoyo@kotlinandroid.net"  >
+                <i class="icon icon-lg icon-envelope"></i>
+                邮件
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://www.kotlinandroid.net/timeline"  >
+                <i class="icon icon-lg icon-calendar"></i>
+                时间轴
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/itgoyo"  >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://www.kotlinandroid.net/resume"  >
+                <i class="icon icon-lg icon-file-text"></i>
+                Résumé
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://hukai.me/android-training-course-in-chinese/index.html"  >
+                <i class="icon icon-lg icon-android"></i>
+                官方培训课程
+              </a>
+            </li>
+        
+
+      <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=300 height=270 src="https://music.163.com/outchain/player?type=0&id=120897804&auto=1&height=430"></iframe>
+
+        <div class="div_right_bottom" align="center">
+          <img src="/assets/getqrcode.jpeg">
+          微信公众号
+          </div>
+
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">给初学者的RxJava2教程</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">给初学者的RxJava2教程</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2017-11-24T13:50:31.000Z" itemprop="datePublished" class="page-time">
+  2017-11-24
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/源码分析/">源码分析</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Rxjava-一"><span class="post-toc-number">1.</span> <span class="post-toc-text">Rxjava(一)</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#前言"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">前言</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#正题"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">正题</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-给初学者的RxJava2教程"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">给初学者的RxJava2教程</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2017-11-24 21:50:31" datetime="2017-11-24T13:50:31.000Z"  itemprop="datePublished">2017-11-24</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/源码分析/">源码分析</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="Rxjava-一"><a href="#Rxjava-一" class="headerlink" title="Rxjava(一)"></a>Rxjava(一)</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>上个月RxJava2正式版发布了，但目前国内的资料还比较少，以前使用过RxJava1只需要看看更新文档就知道怎么使用了，但还有一些以前没用过RxJava的朋友可能就不知道怎么办了，不知道该看RxJava1还是直接跳到RxJava2。所以写下这个教程， 帮助那些没有用过RxJava的朋友入门。</p>
+<blockquote>
+<p>注：如果你觉得写得不好，请直接批评指出。</p>
+</blockquote>
+<p>我先回答这个问题：学习RxJava2需要先学习RxJava1吗？</p>
+<p>这个问题就像论坛经常问学Java前需要先学习C语言吗，这里就不引战了！（PHP是世界上最好的语言！！）</p>
+<p>答案明显不是，如果你以前学过RxJava1，那么对于RxJava2只需要看看更新了哪些东西就行了，其最核心的思想并没有变化，如果你没学过RxJava1，没有关系，直接学习RxJava2。所以作为一个RxJava2的教程，本文中所有的名词都属于RxJava2中，并不涉及RxJava1。</p>
+<p>要在Android中使用RxJava2, 先添加Gradle配置:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">compile &apos;io.reactivex.rxjava2:rxjava:2.0.1&apos;</div><div class="line">compile &apos;io.reactivex.rxjava2:rxandroid:2.0.1&apos;</div></pre></td></tr></table></figure>
+<h2 id="正题"><a href="#正题" class="headerlink" title="正题"></a>正题</h2><p>在开始学习之前，先来介绍点原理性的东西。</p>
+<p>网上也有很多介绍RxJava原理的文章，通常这些文章都从观察者模式开始，先讲观察者，被观察者，订阅关系巴拉巴拉一大堆，说实话，当我第一次看到这些文章的时候已经被这些名词给绕晕了，用了很长的时间才理清楚它们之间的关系。可能是我太蠢了，境界不够，领会不到那么多高大上的名词.</p>
+<p>今天我用两根水管代替观察者和被观察者, 试图用通俗易懂的话把它们的关系解释清楚, 在这里我将从事件流这个角度来说明RxJava的基本工作原理。</p>
+<p>先假设有两根水管：</p>
+<p><img src="http://omvbl46i3.bkt.clouddn.com/3f43378ea9f38feb6e2e2e70ef709230.png" alt=""></p>
+<p>上面一根水管为事件产生的水管，叫它<strong>上游</strong>吧，下面一根水管为事件接收的水管叫它<strong>下游</strong>吧。</p>
+<p>两根水管通过一定的方式连接起来，使得上游每产生一个事件，下游就能收到该事件。注意这里和官网的事件图是反过来的, 这里的事件发送的顺序是先1,后2,后3这样的顺序, 事件接收的顺序也是先1,后2,后3的顺序, 我觉得这样更符合我们普通人的思维, 简单明了.</p>
+<p>这里的上游和下游就分别对应着RxJava中的Observable和Observer，它们之间的连接就对应着subscribe()，因此这个关系用RxJava来表示就是：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line">//创建一个上游 Observable：</div><div class="line">       Observable&lt;Integer&gt; observable = Observable.create(new ObservableOnSubscribe&lt;Integer&gt;() &#123;</div><div class="line">           @Override</div><div class="line">           public void subscribe(ObservableEmitter&lt;Integer&gt; emitter) throws Exception &#123;</div><div class="line">               emitter.onNext(1);</div><div class="line">               emitter.onNext(2);</div><div class="line">               emitter.onNext(3);</div><div class="line">               emitter.onComplete();</div><div class="line">           &#125;</div><div class="line">       &#125;);</div><div class="line">       //创建一个下游 Observer</div><div class="line">       Observer&lt;Integer&gt; observer = new Observer&lt;Integer&gt;() &#123;</div><div class="line">           @Override</div><div class="line">           public void onSubscribe(Disposable d) &#123;</div><div class="line">               Log.d(TAG, &quot;subscribe&quot;);</div><div class="line">           &#125;</div><div class="line"></div><div class="line">           @Override</div><div class="line">           public void onNext(Integer value) &#123;</div><div class="line">               Log.d(TAG, &quot;&quot; + value);</div><div class="line">           &#125;</div><div class="line"></div><div class="line">           @Override</div><div class="line">           public void onError(Throwable e) &#123;</div><div class="line">               Log.d(TAG, &quot;error&quot;);</div><div class="line">           &#125;</div><div class="line"></div><div class="line">           @Override</div><div class="line">           public void onComplete() &#123;</div><div class="line">               Log.d(TAG, &quot;complete&quot;);</div><div class="line">           &#125;</div><div class="line">       &#125;;</div><div class="line">       //建立连接</div><div class="line">       observable.subscribe(observer);</div></pre></td></tr></table></figure>
+<p>这个运行的结果就是:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">12-02 03:37:17.818 4166-4166/zlc.season.rxjava2demo D/TAG: subscribe</div><div class="line">12-02 03:37:17.819 4166-4166/zlc.season.rxjava2demo D/TAG: 1</div><div class="line">12-02 03:37:17.819 4166-4166/zlc.season.rxjava2demo D/TAG: 2</div><div class="line">12-02 03:37:17.819 4166-4166/zlc.season.rxjava2demo D/TAG: 3</div><div class="line">12-02 03:37:17.819 4166-4166/zlc.season.rxjava2demo D/TAG: complete</div></pre></td></tr></table></figure>
+<blockquote>
+<p>注意: 只有当上游和下游建立连接之后, 上游才会开始发送事件. 也就是调用了subscribe() 方法之后才开始发送事件.</p>
+</blockquote>
+<p>把这段代码连起来写就成了RxJava引以为傲的链式操作：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">Observable.create(new ObservableOnSubscribe&lt;Integer&gt;() &#123;</div><div class="line">           @Override</div><div class="line">           public void subscribe(ObservableEmitter&lt;Integer&gt; emitter) throws Exception &#123;</div><div class="line">               emitter.onNext(1);</div><div class="line">               emitter.onNext(2);</div><div class="line">               emitter.onNext(3);</div><div class="line">               emitter.onComplete();</div><div class="line">           &#125;</div><div class="line">       &#125;).subscribe(new Observer&lt;Integer&gt;() &#123;</div><div class="line">           @Override</div><div class="line">           public void onSubscribe(Disposable d) &#123;</div><div class="line">               Log.d(TAG, &quot;subscribe&quot;);</div><div class="line">           &#125;</div><div class="line"></div><div class="line">           @Override</div><div class="line">           public void onNext(Integer value) &#123;</div><div class="line">               Log.d(TAG, &quot;&quot; + value);</div><div class="line">           &#125;</div><div class="line"></div><div class="line">           @Override</div><div class="line">           public void onError(Throwable e) &#123;</div><div class="line">               Log.d(TAG, &quot;error&quot;);</div><div class="line">           &#125;</div><div class="line"></div><div class="line">           @Override</div><div class="line">           public void onComplete() &#123;</div><div class="line">               Log.d(TAG, &quot;complete&quot;);</div><div class="line">           &#125;</div><div class="line">       &#125;);</div></pre></td></tr></table></figure>
+<p>接下来解释一下其中两个陌生的玩意：ObservableEmitter和Disposable.</p>
+<p>ObservableEmitter： Emitter是发射器的意思，那就很好猜了，这个就是用来发出事件的，它可以发出三种类型的事件，通过调用emitter的onNext(T value)、onComplete()和onError(Throwable error)就可以分别发出next事件、complete事件和error事件。</p>
+<p>但是，请注意，并不意味着你可以随意乱七八糟发射事件，需要满足一定的规则：</p>
+<p>上游可以发送无限个onNext, 下游也可以接收无限个onNext.</p>
+<p>当上游发送了一个onComplete后, 上游onComplete之后的事件将会继续发送, 而下游收到onComplete事件之后将不再继续接收事件.</p>
+<p>当上游发送了一个onError后, 上游onError之后的事件将继续发送, 而下游收到onError事件之后将不再继续接收事件.</p>
+<p>上游可以不发送onComplete或onError.</p>
+<p>最为关键的是onComplete和onError必须唯一并且互斥, 即不能发多个onComplete, 也不能发多个onError, 也不能先发一个onComplete, 然后再发一个onError, 反之亦然</p>
+<blockquote>
+<p>注: 关于onComplete和onError唯一并且互斥这一点, 是需要自行在代码中进行控制, 如果你的代码逻辑中违背了这个规则, 并不一定会导致程序崩溃. 比如发送多个onComplete是可以正常运行的, 依然是收到第一个onComplete就不再接收了, 但若是发送多个onError, 则收到第二个onError事件会导致程序会崩溃.</p>
+</blockquote>
+<p>以上几个规则用示意图表示如下:</p>
+<pre><code>事件       | 示意图
+</code></pre><p>:————: | ————————————————————————–<br> 只发送onNext事件   | <img src="http://omvbl46i3.bkt.clouddn.com/f4d1ec5519b3d5d4e48fcac83ec78841.png" alt=""><br>发送onComplete事件 | <img src="http://omvbl46i3.bkt.clouddn.com/d6cbd74dc4e4d4f82efc28382a4dfb57.png" alt=""><br> 发送onError事件   | <img src="http://omvbl46i3.bkt.clouddn.com/48bb5501aa9ad00a5bde8ba14b94c150.png" alt=""></p>
+<p>介绍了ObservableEmitter, 接下来介绍Disposable, 这个单词的字面意思是一次性用品,用完即可丢弃的. 那么在RxJava中怎么去理解它呢, 对应于上面的水管的例子, 我们可以把它理解成两根管道之间的一个机关, 当调用它的dispose()方法时, 它就会将两根管道切断, 从而导致下游收不到事件.</p>
+<blockquote>
+<p>注意: 调用dispose()并不会导致上游不再继续发送事件, 上游会继续发送剩余的事件.</p>
+</blockquote>
+<p>来看个例子, 我们让上游依次发送1,2,3,complete,4,在下游收到第二个事件之后, 切断水管, 看看运行结果:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div></pre></td><td class="code"><pre><div class="line">Observable.create(new ObservableOnSubscribe&lt;Integer&gt;() &#123;</div><div class="line">            @Override</div><div class="line">            public void subscribe(ObservableEmitter&lt;Integer&gt; emitter) throws Exception &#123;</div><div class="line">                Log.d(TAG, &quot;emit 1&quot;);</div><div class="line">                emitter.onNext(1);</div><div class="line">                Log.d(TAG, &quot;emit 2&quot;);</div><div class="line">                emitter.onNext(2);</div><div class="line">                Log.d(TAG, &quot;emit 3&quot;);</div><div class="line">                emitter.onNext(3);</div><div class="line">                Log.d(TAG, &quot;emit complete&quot;);</div><div class="line">                emitter.onComplete();</div><div class="line">                Log.d(TAG, &quot;emit 4&quot;);</div><div class="line">                emitter.onNext(4);</div><div class="line">            &#125;</div><div class="line">        &#125;).subscribe(new Observer&lt;Integer&gt;() &#123;</div><div class="line">            private Disposable mDisposable;</div><div class="line">            private int i;</div><div class="line"></div><div class="line">            @Override</div><div class="line">            public void onSubscribe(Disposable d) &#123;</div><div class="line">                Log.d(TAG, &quot;subscribe&quot;);</div><div class="line">                mDisposable = d;</div><div class="line">            &#125;</div><div class="line"></div><div class="line">            @Override</div><div class="line">            public void onNext(Integer value) &#123;</div><div class="line">                Log.d(TAG, &quot;onNext: &quot; + value);</div><div class="line">                i++;</div><div class="line">                if (i == 2) &#123;</div><div class="line">                    Log.d(TAG, &quot;dispose&quot;);</div><div class="line">                    mDisposable.dispose();</div><div class="line">                    Log.d(TAG, &quot;isDisposed : &quot; + mDisposable.isDisposed());</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line"></div><div class="line">            @Override</div><div class="line">            public void onError(Throwable e) &#123;</div><div class="line">                Log.d(TAG, &quot;error&quot;);</div><div class="line">            &#125;</div><div class="line"></div><div class="line">            @Override</div><div class="line">            public void onComplete() &#123;</div><div class="line">                Log.d(TAG, &quot;complete&quot;);</div><div class="line">            &#125;</div><div class="line">        &#125;);</div></pre></td></tr></table></figure>
+<p>运行结果为:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">12-02 06:54:07.728 7404-7404/zlc.season.rxjava2demo D/TAG: subscribe</div><div class="line">12-02 06:54:07.728 7404-7404/zlc.season.rxjava2demo D/TAG: emit 1</div><div class="line">12-02 06:54:07.728 7404-7404/zlc.season.rxjava2demo D/TAG: onNext: 1</div><div class="line">12-02 06:54:07.728 7404-7404/zlc.season.rxjava2demo D/TAG: emit 2</div><div class="line">12-02 06:54:07.728 7404-7404/zlc.season.rxjava2demo D/TAG: onNext: 2</div><div class="line">12-02 06:54:07.728 7404-7404/zlc.season.rxjava2demo D/TAG: dispose</div><div class="line">12-02 06:54:07.728 7404-7404/zlc.season.rxjava2demo D/TAG: isDisposed : true</div><div class="line">12-02 06:54:07.728 7404-7404/zlc.season.rxjava2demo D/TAG: emit 3</div><div class="line">12-02 06:54:07.728 7404-7404/zlc.season.rxjava2demo D/TAG: emit complete</div><div class="line">12-02 06:54:07.728 7404-7404/zlc.season.rxjava2demo D/TAG: emit 4</div></pre></td></tr></table></figure>
+<p>从运行结果我们看到, 在收到onNext 2这个事件后, 切断了水管, 但是上游仍然发送了3, complete, 4这几个事件, 而且上游并没有因为发送了onComplete而停止. 同时可以看到下游的onSubscribe()方法是最先调用的.</p>
+<p>Disposable的用处不止这些, 后面讲解到了线程的调度之后, 我们会发现它的重要性. 随着后续深入的讲解, 我们会在更多的地方发现它的身影.</p>
+<p>另外, subscribe()有多个重载的方法:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">public final Disposable subscribe() &#123;&#125;</div><div class="line">public final Disposable subscribe(Consumer&lt;? super T&gt; onNext) &#123;&#125;</div><div class="line">public final Disposable subscribe(Consumer&lt;? super T&gt; onNext, Consumer&lt;? super Throwable&gt; onError) &#123;&#125;</div><div class="line">public final Disposable subscribe(Consumer&lt;? super T&gt; onNext, Consumer&lt;? super Throwable&gt; onError, Action onComplete) &#123;&#125;</div><div class="line">public final Disposable subscribe(Consumer&lt;? super T&gt; onNext, Consumer&lt;? super Throwable&gt; onError, Action onComplete, Consumer&lt;? super Disposable&gt; onSubscribe) &#123;&#125;</div><div class="line">public final void subscribe(Observer&lt;? super T&gt; observer) &#123;&#125;</div></pre></td></tr></table></figure>
+<p>最后一个带有Observer参数的我们已经使用过了,这里对其他几个方法进行说明.</p>
+<p>不带任何参数的subscribe() 表示下游不关心任何事件,你上游尽管发你的数据去吧, 老子可不管你发什么. 带有一个Consumer参数的方法表示下游只关心onNext事件, 其他的事件我假装没看见, 因此我们如果只需要onNext事件可以这么写:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">Observable.create(new ObservableOnSubscribe&lt;Integer&gt;() &#123;</div><div class="line">    @Override</div><div class="line">    public void subscribe(ObservableEmitter&lt;Integer&gt; emitter) throws Exception &#123;</div><div class="line">        Log.d(TAG, &quot;emit 1&quot;);</div><div class="line">        emitter.onNext(1);</div><div class="line">        Log.d(TAG, &quot;emit 2&quot;);</div><div class="line">        emitter.onNext(2);</div><div class="line">        Log.d(TAG, &quot;emit 3&quot;);</div><div class="line">        emitter.onNext(3);</div><div class="line">        Log.d(TAG, &quot;emit complete&quot;);</div><div class="line">        emitter.onComplete();</div><div class="line">        Log.d(TAG, &quot;emit 4&quot;);</div><div class="line">        emitter.onNext(4);</div><div class="line">    &#125;</div><div class="line">&#125;).subscribe(new Consumer&lt;Integer&gt;() &#123;</div><div class="line">    @Override</div><div class="line">    public void accept(Integer integer) throws Exception &#123;</div><div class="line">        Log.d(TAG, &quot;onNext: &quot; + integer);</div><div class="line">    &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>其他几个方法同理, 这里就不一一解释了.</p>
+<hr>
+<div align="center"><br><br>发现更多有趣好玩的，欢迎关注我的微信公众号<br><br><img src="/assets/getqrcode.jpeg" alt=""></div>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2017-11-24T14:29:32.000Z" itemprop="dateUpdated">2017-11-24 22:29:32</time>
+</span><br>
+
+
+        
+    </div>
+    <footer>
+        <a href="https://github.com/itgoyo">
+            <img src="/img/kotlin_250x250.jpg" alt="itgoyo">
+            itgoyo
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://github.com/itgoyo/2017/11/24/给初学者的RxJava2教程.html&title=《给初学者的RxJava2教程》 — ITGOYO技术站&pic=https://github.com/itgoyo/img/kotlin_250x250.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://github.com/itgoyo/2017/11/24/给初学者的RxJava2教程.html&title=《给初学者的RxJava2教程》 — ITGOYO技术站&source=talk is cheap,show me the girl." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://github.com/itgoyo/2017/11/24/给初学者的RxJava2教程.html" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《给初学者的RxJava2教程》 — ITGOYO技术站&url=https://github.com/itgoyo/2017/11/24/给初学者的RxJava2教程.html&via=https://github.com/itgoyo" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://github.com/itgoyo/2017/11/24/给初学者的RxJava2教程.html" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2017/11/09/Vim常用快捷键大全.html" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Vim常用快捷键大全</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+<section class="comments" id="comments">
+    <div id="disqus_thread"></div>
+    <script>
+    var disqus_shortname = 'itgoyo';
+    lazyScripts.push('//' + disqus_shortname + '.disqus.com/embed.js')
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitment_thread"></div>
+    <link rel="stylesheet" href="//unpkg.com/gitment/style/default.css">
+    <!-- <script src="//unpkg.com/gitment/dist/gitment.browser.js"></script> -->
+    <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+    <script>
+        var gitment = new Gitment({
+            owner: 'itgoyo',
+            repo: 'itgoyo.github.io',
+            oauth: {
+                client_id: '464e7c112346fd6daabb',
+                client_secret: '3f78aa47b168a9788b888238a610dff1ac6e51ac',
+            },
+        })
+        gitment.render('comments')
+    </script>
+</section>
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        奖励一杯咖啡!
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/assets/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/assets/img/wechat.jpg" data-alipay="/assets/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+
+    <div class="bottom">
+  
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            <span>itgoyo &copy; 2017</span>  &nbsp&nbsp&nbsp 作者Github地址 欢迎关注 <a href="https://github.com/itgoyo" target="_blank">itgoyo</a>
+              <a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a>
+        </p>
+        <p>
+        感谢西部数码提供<a href="http://www.west.cn/index.asp?ReferenceID=1232730"
+        target="_blank">虚拟主机</a>
+        </p>
+        <p>
+            <span>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://github.com/itgoyo/2017/11/24/给初学者的RxJava2教程.html&title=《给初学者的RxJava2教程》 — ITGOYO技术站&pic=https://github.com/itgoyo/img/kotlin_250x250.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://github.com/itgoyo/2017/11/24/给初学者的RxJava2教程.html&title=《给初学者的RxJava2教程》 — ITGOYO技术站&source=talk is cheap,show me the girl." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://github.com/itgoyo/2017/11/24/给初学者的RxJava2教程.html" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《给初学者的RxJava2教程》 — ITGOYO技术站&url=https://github.com/itgoyo/2017/11/24/给初学者的RxJava2教程.html&via=https://github.com/itgoyo" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://github.com/itgoyo/2017/11/24/给初学者的RxJava2教程.html" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACsUlEQVR42u3aQY7iQAwF0L7/pXuk2fYA/9tVDSO9rFACSV4tysb211d8fP89kjM/j0fff/6Un5+TOwwPPDw8vNGrJy+XnEmWI7+agB+9Mx4eHt5tXrJNP9+aXzwmXpT8fZIAhoeHh/deXv6iyfY9Wz48PDy8/5eXI2dJOR4eHt7n8/Ii7KNNPC9PPKfOzh+oteDh4eHFvLYB9gmfL/b38PDw8BZd9bZwkG/cbeF4duDh4eHd4CVp62wMazMytRnYiv4x4OHh4a157XjTLJvdL8Tz+xS1ajw8PLwLvFNb/6w42y5ZtEB4eHh4R3l5WWEfKtoEOl+Ih1fx8PDwjvLyF50VJmbjBW3Z90UBAg8PD+8Cb9OwX7WmRsGjSN/x8PDwLvA25dc2MLT3rMPA2eoyHh4e3uJns0b+KfasuPxw6AoPDw9vzZu1rPYDB6eKv6vVxcPDwxvx2oGAs6NU7flZnRYPDw/vNm+TZOctq1lpY1hGwcPDw7vGS9LrTVN/374ajr3i4eHhHeXVA6Bl4jsLD0k6HhWF8fDw8H6d177iBtymzkkAw8PDw7vB27Tzk2JEMnYwGw4oFggPDw/vAq/d9NuxgNsBI0/B8fDw8Pa8PCS04WEWTpJyQ5Hu4+Hh4V3gbRpgs28m5YPDv8XDw8M7ynteLJgVBfJQMUu7i7YcHh4e3q/wnjP2owBJfXW2xFF9Gg8PD2/Na//2582tfOufBYn6+3h4eHiHeN/lkSTN7ejAZonx8PDwfp+XH7NtOl+Idmnw8PDw3svLg8EseGyWrB01eDE6gIeHh3eU1xZnk0fm52eMKCnHw8PDeyuvDRstsk2XozEvPDw8vA/g7QsHs2fNQg4eHh7ePV679beNtLaY2xYyHt4BDw8P7wJv1gBLzsyKs7Ok/HB/Dw8PD+/fV/8AmV41ykWLYkYAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+
+lazyScripts.push('//s95.cnzz.com/z_stat.php?id=1261686164&web_id=1261686164')
+
+</script>
+
+<script src="/js/main.min.js?v=1.5.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.5.2" async></script>
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+</body>
+</html>
