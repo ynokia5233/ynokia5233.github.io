@@ -56,7 +56,7 @@
 <meta property="og:image" content="http://omvbl46i3.bkt.clouddn.com/d6cbd74dc4e4d4f82efc28382a4dfb57.png">
 <meta property="og:image" content="http://omvbl46i3.bkt.clouddn.com/48bb5501aa9ad00a5bde8ba14b94c150.png">
 <meta property="og:image" content="https://github.com/assets/getqrcode.jpeg">
-<meta property="og:updated_time" content="2017-11-24T14:59:29.000Z">
+<meta property="og:updated_time" content="2017-11-24T16:05:06.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="给初学者的RxJava2教程">
 <meta name="twitter:description" content="Rxjava2入门最通俗易懂的教程">
@@ -326,8 +326,29 @@ var _hmt = _hmt || [];
 <p>注: 关于onComplete和onError唯一并且互斥这一点, 是需要自行在代码中进行控制, 如果你的代码逻辑中违背了这个规则, 并不一定会导致程序崩溃. 比如发送多个onComplete是可以正常运行的, 依然是收到第一个onComplete就不再接收了, 但若是发送多个onError, 则收到第二个onError事件会导致程序会崩溃.</p>
 </blockquote>
 <p>以上几个规则用示意图表示如下:</p>
-<pre><code>事件       | 示意图
-</code></pre><p>:————: | ————————————————————————–<br> 只发送onNext事件   | <img src="http://omvbl46i3.bkt.clouddn.com/f4d1ec5519b3d5d4e48fcac83ec78841.png" alt=""><br>发送onComplete事件 | <img src="http://omvbl46i3.bkt.clouddn.com/d6cbd74dc4e4d4f82efc28382a4dfb57.png" alt=""><br> 发送onError事件   | <img src="http://omvbl46i3.bkt.clouddn.com/48bb5501aa9ad00a5bde8ba14b94c150.png" alt=""></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th>事件</th>
+<th>示意图</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"> 只发送onNext事件</td>
+<td><img src="http://omvbl46i3.bkt.clouddn.com/f4d1ec5519b3d5d4e48fcac83ec78841.png" alt=""></td>
+</tr>
+<tr>
+<td style="text-align:center">发送onComplete事件</td>
+<td><img src="http://omvbl46i3.bkt.clouddn.com/d6cbd74dc4e4d4f82efc28382a4dfb57.png" alt=""></td>
+</tr>
+<tr>
+<td style="text-align:center"> 发送onError事件</td>
+<td><img src="http://omvbl46i3.bkt.clouddn.com/48bb5501aa9ad00a5bde8ba14b94c150.png" alt=""></td>
+</tr>
+</tbody>
+</table>
 <p>介绍了ObservableEmitter, 接下来介绍Disposable, 这个单词的字面意思是一次性用品,用完即可丢弃的. 那么在RxJava中怎么去理解它呢, 对应于上面的水管的例子, 我们可以把它理解成两根管道之间的一个机关, 当调用它的dispose()方法时, 它就会将两根管道切断, 从而导致下游收不到事件.</p>
 <blockquote>
 <p>注意: 调用dispose()并不会导致上游不再继续发送事件, 上游会继续发送剩余的事件.</p>
@@ -353,7 +374,7 @@ var _hmt = _hmt || [];
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2017-11-24T14:59:29.000Z" itemprop="dateUpdated">2017-11-24 22:59:29</time>
+    Last updated: <time datetime="2017-11-24T16:05:06.000Z" itemprop="dateUpdated">2017-11-25 00:05:06</time>
 </span><br>
 
 
