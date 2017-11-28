@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    
+
+    
+
+    
+
+
+<!-- Baidu Push -->
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+<!-- End Baidu Push -->
+
+
+    <meta charset="utf-8">
+    
+    <meta name="google-site-verification" content="true">
+    <meta name="baidu-site-verification" content="97dbRVWfVh" />
+    <meta name="sogou_site_verification" content="AIePRXkUI4"/>
+    
+    
+    <link rel="canonical" href="http://www.kotlinandroid.net/2017/11/28/第一行代码控件部分.html">
+    
+    
+    <title>第一行代码控件部分 | ITGOYO技术站 | 一个专注发布技术相关与优秀文章的技术网站</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Android">
+    <meta name="description" content="控件部分 Listview  最常用也最难用的控件 优化之后的ListView写法  12345678910111213141516171819202122232425262728293031323334353637383940public class FruitAdapter extends ArrayAdapter&amp;lt;Fruit&amp;gt; &amp;#123;    private int reso">
+<meta name="keywords" content="Android">
+<meta property="og:type" content="article">
+<meta property="og:title" content="第一行代码控件部分">
+<meta property="og:url" content="https://github.com/itgoyo/2017/11/28/第一行代码控件部分.html">
+<meta property="og:site_name" content="ITGOYO技术站">
+<meta property="og:description" content="控件部分 Listview  最常用也最难用的控件 优化之后的ListView写法  12345678910111213141516171819202122232425262728293031323334353637383940public class FruitAdapter extends ArrayAdapter&amp;lt;Fruit&amp;gt; &amp;#123;    private int reso">
+<meta property="og:image" content="http://omvbl46i3.bkt.clouddn.com/b5af117d23afb439901bf44e7df9dd08.png">
+<meta property="og:image" content="http://omvbl46i3.bkt.clouddn.com/f460eda4bf5c953f0883ddf89f00a6ab.png">
+<meta property="og:image" content="http://omvbl46i3.bkt.clouddn.com/257f9c5db37382f98fbdb886bb9b3c00.png">
+<meta property="og:image" content="http://omvbl46i3.bkt.clouddn.com/544c531216c6c5b57f3a9ffb6632deef.png">
+<meta property="og:image" content="https://github.com/assets/getqrcode.jpeg">
+<meta property="og:updated_time" content="2017-11-28T13:56:25.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="第一行代码控件部分">
+<meta name="twitter:description" content="控件部分 Listview  最常用也最难用的控件 优化之后的ListView写法  12345678910111213141516171819202122232425262728293031323334353637383940public class FruitAdapter extends ArrayAdapter&amp;lt;Fruit&amp;gt; &amp;#123;    private int reso">
+<meta name="twitter:image" content="http://omvbl46i3.bkt.clouddn.com/b5af117d23afb439901bf44e7df9dd08.png">
+    
+        <link rel="alternative" href="/atom.xml" title="ITGOYO技术站" type="application/atom+xml">
+    
+    <link rel="shortcut icon" href="/img/kotlin.png">
+    <link rel="stylesheet" href="/css/style.css?v=1.5.2">
+    <script>window.lazyScripts=[]</script>
+
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?c16d3c10c9ea6c6fe749d9926d52b0d6";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" style="
+    width: 300px;"class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand" style="
+          width: 300px;">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/kotlin_250x250.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">itgoyo</h5>
+          <a href="mailto:itgoyo@gmail.com" title="itgoyo@gmail.com" class="mail">itgoyo@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col" style="
+        width: 300px;">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="http://www.kotlinandroid.net/website"  >
+                <i class="icon icon-lg icon-html5"></i>
+                官网
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                文章
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/books"  >
+                <i class="icon icon-lg icon-book"></i>
+                书籍
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/movies"  >
+                <i class="icon icon-lg icon-film"></i>
+                电影
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://www.kotlinandroid.net/album"  >
+                <i class="icon icon-lg icon-photo"></i>
+                相册
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="Mailto:itgoyo@kotlinandroid.net"  >
+                <i class="icon icon-lg icon-envelope"></i>
+                邮件
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://www.kotlinandroid.net/timeline"  >
+                <i class="icon icon-lg icon-calendar"></i>
+                时间轴
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/itgoyo"  >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://www.kotlinandroid.net/resume"  >
+                <i class="icon icon-lg icon-file-text"></i>
+                Résumé
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://hukai.me/android-training-course-in-chinese/index.html"  >
+                <i class="icon icon-lg icon-android"></i>
+                官方培训课程
+              </a>
+            </li>
+        
+
+      <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=300 height=270 src="https://music.163.com/outchain/player?type=0&id=120897804&auto=1&height=430"></iframe>
+
+        <div class="div_right_bottom" align="center">
+          <img src="/assets/getqrcode.jpeg">
+          微信公众号
+          </div>
+
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">第一行代码控件部分</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">第一行代码控件部分</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2017-11-28T13:55:55.000Z" itemprop="datePublished" class="page-time">
+  2017-11-28
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Android/">Android</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#控件部分"><span class="post-toc-number">1.</span> <span class="post-toc-text">控件部分</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#设置点击事件"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">设置点击事件</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-第一行代码控件部分"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">第一行代码控件部分</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2017-11-28 21:55:55" datetime="2017-11-28T13:55:55.000Z"  itemprop="datePublished">2017-11-28</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Android/">Android</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h3 id="控件部分"><a href="#控件部分" class="headerlink" title="控件部分"></a>控件部分</h3><ul>
+<li>Listview</li>
+</ul>
+<p>最常用也最难用的控件</p>
+<p>优化之后的ListView写法</p>
+<p><img src="http://omvbl46i3.bkt.clouddn.com/b5af117d23afb439901bf44e7df9dd08.png" alt=""><br><img src="http://omvbl46i3.bkt.clouddn.com/f460eda4bf5c953f0883ddf89f00a6ab.png" alt=""></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">public class FruitAdapter extends ArrayAdapter&lt;Fruit&gt; &#123;</div><div class="line"></div><div class="line">    private int resourceId;</div><div class="line"></div><div class="line">    public FruitAdapter(Context context, int textViewResourceId,</div><div class="line">                        List&lt;Fruit&gt; objects) &#123;</div><div class="line">        super(context, textViewResourceId, objects);</div><div class="line">        resourceId = textViewResourceId;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    @Override</div><div class="line">    public View getView(int position, View convertView, ViewGroup parent) &#123;</div><div class="line">        Fruit fruit = getItem(position); // 获取当前项的Fruit实例</div><div class="line">        View view;</div><div class="line">        ViewHolder viewHolder;</div><div class="line">        if (convertView == null) &#123;</div><div class="line">            view = LayoutInflater.from(getContext()).inflate(resourceId, parent, false);</div><div class="line">            viewHolder = new ViewHolder();</div><div class="line">            viewHolder.fruitImage = (ImageView) view.findViewById (R.id.fruit_image);</div><div class="line">            viewHolder.fruitName = (TextView) view.findViewById (R.id.fruit_name);</div><div class="line">            view.setTag(viewHolder); // 将ViewHolder存储在View中</div><div class="line">        &#125; else &#123;</div><div class="line">            view = convertView;</div><div class="line">            viewHolder = (ViewHolder) view.getTag(); // 重新获取ViewHolder</div><div class="line">        &#125;</div><div class="line">        viewHolder.fruitImage.setImageResource(fruit.getImageId());</div><div class="line">        viewHolder.fruitName.setText(fruit.getName());</div><div class="line">        return view;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    class ViewHolder &#123;</div><div class="line"></div><div class="line">        ImageView fruitImage;</div><div class="line"></div><div class="line">        TextView fruitName;</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li><p>RecylerView</p>
+<p>ListView的继承者，比ListView要强大得多</p>
+</li>
+</ul>
+<p><img src="http://omvbl46i3.bkt.clouddn.com/257f9c5db37382f98fbdb886bb9b3c00.png" alt=""></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div><div class="line">157</div><div class="line">158</div><div class="line">159</div><div class="line">160</div><div class="line">161</div><div class="line">162</div><div class="line">163</div><div class="line">164</div><div class="line">165</div><div class="line">166</div><div class="line">167</div><div class="line">168</div><div class="line">169</div><div class="line">170</div><div class="line">171</div><div class="line">172</div></pre></td><td class="code"><pre><div class="line"> 来源：Github项目GeekNews</div><div class="line">public class DailyAdapter extends RecyclerView.Adapter&lt;RecyclerView.ViewHolder&gt;&#123;</div><div class="line"></div><div class="line">private List&lt;DailyListBean.StoriesBean&gt; mList;</div><div class="line">private List&lt;DailyListBean.TopStoriesBean&gt; mTopList;</div><div class="line">private LayoutInflater inflater;</div><div class="line">private Context mContext;</div><div class="line">private TopPagerAdapter mAdapter;</div><div class="line">private ViewPager topViewPager;</div><div class="line">private OnItemClickListener onItemClickListener;</div><div class="line"></div><div class="line">private boolean isBefore = false;</div><div class="line">private String currentTitle = &quot;今日热闻&quot;;</div><div class="line"></div><div class="line">public enum ITEM_TYPE &#123;</div><div class="line">   ITEM_TOP,       //滚动栏</div><div class="line">   ITEM_DATE,      //日期</div><div class="line">   ITEM_CONTENT    //内容</div><div class="line">&#125;</div><div class="line"></div><div class="line">public DailyAdapter(Context mContext, List&lt;DailyListBean.StoriesBean&gt; mList) &#123;</div><div class="line">   this.mList = mList;</div><div class="line">   this.mContext = mContext;</div><div class="line">   inflater = LayoutInflater.from(mContext);</div><div class="line">&#125;</div><div class="line"></div><div class="line">@Override</div><div class="line">public int getItemViewType(int position) &#123;</div><div class="line">   if(!isBefore) &#123;</div><div class="line">       if(position == 0) &#123;</div><div class="line">           return ITEM_TYPE.ITEM_TOP.ordinal();</div><div class="line">       &#125; else if(position == 1) &#123;</div><div class="line">           return ITEM_TYPE.ITEM_DATE.ordinal();</div><div class="line">       &#125; else &#123;</div><div class="line">           return ITEM_TYPE.ITEM_CONTENT.ordinal();</div><div class="line">       &#125;</div><div class="line">   &#125; else &#123;</div><div class="line">       if(position == 0) &#123;</div><div class="line">           return ITEM_TYPE.ITEM_DATE.ordinal();</div><div class="line">       &#125; else &#123;</div><div class="line">           return ITEM_TYPE.ITEM_CONTENT.ordinal();</div><div class="line">       &#125;</div><div class="line">   &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">@Override</div><div class="line">public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) &#123;</div><div class="line">   if(viewType == ITEM_TYPE.ITEM_TOP.ordinal()) &#123;</div><div class="line">       mAdapter = new TopPagerAdapter(mContext,mTopList);</div><div class="line">       return new TopViewHolder(inflater.inflate(R.layout.item_top, parent, false));</div><div class="line">   &#125; else if(viewType == ITEM_TYPE.ITEM_DATE.ordinal()) &#123;</div><div class="line">       return new DateViewHolder(inflater.inflate(R.layout.item_date, parent, false));</div><div class="line">   &#125;</div><div class="line">   return new ContentViewHolder(inflater.inflate(R.layout.item_daily, parent, false));</div><div class="line">&#125;</div><div class="line"></div><div class="line">@Override</div><div class="line">public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) &#123;</div><div class="line">   if (holder instanceof ContentViewHolder) &#123;</div><div class="line">       final int contentPosition;</div><div class="line">       if(isBefore) &#123;</div><div class="line">           contentPosition = position - 1;</div><div class="line">       &#125; else &#123;</div><div class="line">           contentPosition = position - 2;</div><div class="line">       &#125;</div><div class="line">       ((ContentViewHolder)holder).title.setText(mList.get(contentPosition).getTitle());</div><div class="line">       if (mList.get(contentPosition).getReadState()) &#123;</div><div class="line">           ((ContentViewHolder)holder).title.setTextColor(ContextCompat.getColor(mContext,R.color.news_read));</div><div class="line">       &#125; else &#123;</div><div class="line">           ((ContentViewHolder)holder).title.setTextColor(ContextCompat.getColor(mContext,R.color.news_unread));</div><div class="line">       &#125;</div><div class="line">       ImageLoader.load(mContext,mList.get(contentPosition).getImages().get(0),((ContentViewHolder)holder).image);</div><div class="line">       holder.itemView.setOnClickListener(new View.OnClickListener() &#123;</div><div class="line">           @Override</div><div class="line">           public void onClick(View view) &#123;</div><div class="line">               if(onItemClickListener != null) &#123;</div><div class="line">                   ImageView iv = (ImageView) view.findViewById(R.id.iv_daily_item_image);</div><div class="line">                   onItemClickListener.onItemClick(contentPosition,iv);</div><div class="line">               &#125;</div><div class="line">           &#125;</div><div class="line">       &#125;);</div><div class="line">   &#125; else if (holder instanceof DateViewHolder) &#123;</div><div class="line">       ((DateViewHolder) holder).tvDate.setText(currentTitle);</div><div class="line">   &#125; else &#123;</div><div class="line">       ((TopViewHolder) holder).vpTop.setAdapter(mAdapter);</div><div class="line">       topViewPager = ((TopViewHolder) holder).vpTop;</div><div class="line">   &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">@Override</div><div class="line">public int getItemCount() &#123;</div><div class="line">   return mList.size();</div><div class="line">&#125;</div><div class="line"></div><div class="line">public static class ContentViewHolder extends RecyclerView.ViewHolder &#123;</div><div class="line"></div><div class="line">   @BindView(R.id.tv_daily_item_title)</div><div class="line">   TextView title;</div><div class="line">   @BindView(R.id.iv_daily_item_image)</div><div class="line">   SquareImageView image;</div><div class="line"></div><div class="line">   public ContentViewHolder(View itemView) &#123;</div><div class="line">       super(itemView);</div><div class="line">       ButterKnife.bind(this,itemView);</div><div class="line">   &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">public static class DateViewHolder extends RecyclerView.ViewHolder &#123;</div><div class="line"></div><div class="line">   @BindView(R.id.tv_daily_date)</div><div class="line">   TextView tvDate;</div><div class="line"></div><div class="line">   public DateViewHolder(View itemView) &#123;</div><div class="line">       super(itemView);</div><div class="line">       ButterKnife.bind(this,itemView);</div><div class="line">   &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">public static class TopViewHolder extends RecyclerView.ViewHolder &#123;</div><div class="line"></div><div class="line">   @BindView(R.id.vp_top)</div><div class="line">   ViewPager vpTop;</div><div class="line">   @BindView(R.id.ll_point_container)</div><div class="line">   LinearLayout llContainer;</div><div class="line"></div><div class="line">   public TopViewHolder(View itemView) &#123;</div><div class="line">       super(itemView);</div><div class="line">       ButterKnife.bind(this,itemView);</div><div class="line">   &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">public void addDailyDate(DailyListBean info) &#123;</div><div class="line">   currentTitle = &quot;今日热闻&quot;;</div><div class="line">   DiffUtil.DiffResult diffResult = DiffUtil.calculateDiff(new ZhihuDiffCallback(mList, info.getStories()), true);</div><div class="line">   mList = info.getStories();</div><div class="line">   mTopList = info.getTop_stories();</div><div class="line">   isBefore = false;</div><div class="line">   diffResult.dispatchUpdatesTo(this);</div><div class="line">//        notifyDataSetChanged();</div><div class="line">&#125;</div><div class="line"></div><div class="line">public void addDailyBeforeDate(DailyBeforeListBean info) &#123;</div><div class="line">   currentTitle = info.getDate();</div><div class="line">   DiffUtil.DiffResult diffResult = DiffUtil.calculateDiff(new ZhihuDiffCallback(mList, info.getStories()), true);</div><div class="line">   mList = info.getStories();</div><div class="line">   isBefore = true;</div><div class="line">   diffResult.dispatchUpdatesTo(this);</div><div class="line">//        notifyDataSetChanged();</div><div class="line">&#125;</div><div class="line"></div><div class="line">public boolean getIsBefore() &#123;</div><div class="line">   return isBefore;</div><div class="line">&#125;</div><div class="line"></div><div class="line">public void setReadState(int position,boolean readState) &#123;</div><div class="line">   mList.get(position).setReadState(readState);</div><div class="line">&#125;</div><div class="line"></div><div class="line">public void changeTopPager(int currentCount) &#123;</div><div class="line">   if(!isBefore &amp;&amp; topViewPager != null) &#123;</div><div class="line">       topViewPager.setCurrentItem(currentCount);</div><div class="line">   &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">public void setOnItemClickListener(OnItemClickListener onItemClickListener) &#123;</div><div class="line">   this.onItemClickListener = onItemClickListener;</div><div class="line">&#125;</div><div class="line"></div><div class="line">public interface OnItemClickListener &#123;</div><div class="line">   void onItemClick(int position,View view);</div><div class="line">&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>自己写过的代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div></pre></td><td class="code"><pre><div class="line">public class PictureAdapter extends RecyclerView.Adapter&lt;PictureAdapter.PicViewHolder&gt; &#123;</div><div class="line">    private  static  final String URL=&quot;http://tnfs.tngou.net/img&quot;;</div><div class="line">    private Context mContext;</div><div class="line">    private List&lt;TianGouBean.TngouBean&gt; mList;</div><div class="line">    private LayoutInflater mInflater;</div><div class="line"></div><div class="line">    public PictureAdapter(Context context, List&lt;TianGouBean.TngouBean&gt; list) &#123;</div><div class="line">        mContext = context;</div><div class="line">        mList = list;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    @Override</div><div class="line">    public PicViewHolder onCreateViewHolder(ViewGroup parent, int viewType) &#123;</div><div class="line"></div><div class="line">        View view = mInflater.from(mContext).inflate(R.layout.pic_item, parent, false);</div><div class="line">        return new PicViewHolder(view);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    @Override</div><div class="line">    public void onBindViewHolder(PicViewHolder holder, int position) &#123;</div><div class="line"></div><div class="line">        TianGouBean.TngouBean tngouBean = mList.get(position);</div><div class="line"></div><div class="line">        holder.setData(tngouBean);</div><div class="line"></div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    @Override</div><div class="line">    public int getItemCount() &#123;</div><div class="line">        if(null!=mList)&#123;</div><div class="line">            return mList.size();</div><div class="line">        &#125;</div><div class="line">        return 0;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    public class PicViewHolder extends RecyclerView.ViewHolder&#123;</div><div class="line"></div><div class="line">        private ImageView mImageView;</div><div class="line">        private TextView mTextView;</div><div class="line"></div><div class="line">        public PicViewHolder(View itemView) &#123;</div><div class="line">            super(itemView);</div><div class="line"></div><div class="line">            mImageView= (ImageView) itemView.findViewById(R.id.iv);</div><div class="line">            mTextView= (TextView) itemView.findViewById(R.id.tv);</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">        &#125;</div><div class="line"></div><div class="line">        public void setData(TianGouBean.TngouBean tngouBean) &#123;</div><div class="line">            mTextView.setText(tngouBean.getName());</div><div class="line"></div><div class="line">            Glide.with(mContext).load(URL+tngouBean.getImg()).asBitmap().diskCacheStrategy(DiskCacheStrategy.SOURCE)</div><div class="line">            .into(new SimpleTarget&lt;Bitmap&gt;() &#123;</div><div class="line">                @Override</div><div class="line">                public void onResourceReady(Bitmap resource, GlideAnimation&lt;? super Bitmap&gt; glideAnimation) &#123;</div><div class="line">                    mImageView.setImageBitmap(resource);</div><div class="line">                &#125;</div><div class="line">            &#125;);</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">            Glide.with(mContext).load(URL).into(mImageView);</div><div class="line"></div><div class="line"></div><div class="line">        &#125;</div><div class="line"></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="设置点击事件"><a href="#设置点击事件" class="headerlink" title="设置点击事件"></a>设置点击事件</h4><p>Adapter在Activity内</p>
+<p><img src="http://omvbl46i3.bkt.clouddn.com/544c531216c6c5b57f3a9ffb6632deef.png" alt=""></p>
+<p>Adapter不在Activity内</p>
+<p>则要自己定义一个接口来传值（模仿Android中的点击事件setOnClickListener，这样子就容易理解多了）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">private CourseAdapter.OnTestClick mOnTestClick;</div><div class="line">   public void setOnClick(CourseAdapter.OnTestClick onTestClick)&#123;</div><div class="line">       mOnTestClick=onTestClick;</div><div class="line">   &#125;</div><div class="line">   public  interface OnTestClick &#123;</div><div class="line">       void OnClick(int i);</div><div class="line">   &#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">//RecyclerView</div><div class="line">mBt.setOnClickListener(new View.OnClickListener() &#123;</div><div class="line">       @Override</div><div class="line">       public void onClick(View v) &#123;</div><div class="line">           if(null!=mOnTestClick)&#123;</div><div class="line">               mOnTestClick.OnClick(getAdapterPosition());</div><div class="line">           &#125;</div><div class="line">       &#125;</div><div class="line">       &#125;);</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">if (0&lt;tempCourseList.size()) &#123;</div><div class="line">      TestCourseAdapter testCourseAdapter = new TestCourseAdapter(CourseInfoActivity.this, tempCourseList);</div><div class="line">      mLvLesson.setAdapter(testCourseAdapter);</div><div class="line">      testCourseAdapter.setOnClick(new CourseAdapter.OnTestClick() &#123;</div><div class="line">          @Override</div><div class="line">          public void OnClick(int i) &#123;</div><div class="line">              mUserEnterPresenter.userEnterRoom(tempCourseList.get(i).getRoomID(), mToken, mAgencyID);</div><div class="line">          &#125;</div><div class="line">      &#125;);</div></pre></td></tr></table></figure>
+<hr>
+<div align="center"><br><br>发现更多有趣好玩的，欢迎关注我的微信公众号<br><br><img src="/assets/getqrcode.jpeg" alt=""><br></div>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2017-11-28T13:56:25.000Z" itemprop="dateUpdated">2017-11-28 21:56:25</time>
+</span><br>
+
+
+        
+    </div>
+    <footer>
+        <a href="https://github.com/itgoyo">
+            <img src="/img/kotlin_250x250.jpg" alt="itgoyo">
+            itgoyo
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://github.com/itgoyo/2017/11/28/第一行代码控件部分.html&title=《第一行代码控件部分》 — ITGOYO技术站&pic=https://github.com/itgoyo/img/kotlin_250x250.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://github.com/itgoyo/2017/11/28/第一行代码控件部分.html&title=《第一行代码控件部分》 — ITGOYO技术站&source=talk is cheap,show me the girl." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://github.com/itgoyo/2017/11/28/第一行代码控件部分.html" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《第一行代码控件部分》 — ITGOYO技术站&url=https://github.com/itgoyo/2017/11/28/第一行代码控件部分.html&via=https://github.com/itgoyo" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://github.com/itgoyo/2017/11/28/第一行代码控件部分.html" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2017/11/28/第一行代码Service.html" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">第一行代码Service</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+<section class="comments" id="comments">
+    <div id="disqus_thread"></div>
+    <script>
+    var disqus_shortname = 'itgoyo';
+    lazyScripts.push('//' + disqus_shortname + '.disqus.com/embed.js')
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitment_thread"></div>
+    <link rel="stylesheet" href="//unpkg.com/gitment/style/default.css">
+    <!-- <script src="//unpkg.com/gitment/dist/gitment.browser.js"></script> -->
+    <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+    <script>
+        var gitment = new Gitment({
+            owner: 'itgoyo',
+            repo: 'itgoyo.github.io',
+            oauth: {
+                client_id: '464e7c112346fd6daabb',
+                client_secret: '3f78aa47b168a9788b888238a610dff1ac6e51ac',
+            },
+        })
+        gitment.render('comments')
+    </script>
+</section>
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        奖励一杯咖啡!
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/assets/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/assets/img/wechat.jpg" data-alipay="/assets/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+
+    <div class="bottom">
+  
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            <span>itgoyo &copy; 2017</span>  &nbsp&nbsp&nbsp 作者Github地址 欢迎关注 <a href="https://github.com/itgoyo" target="_blank">itgoyo</a>
+              <a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a>
+        </p>
+        <p>
+        感谢西部数码提供<a href="http://www.west.cn/index.asp?ReferenceID=1232730"
+        target="_blank">虚拟主机</a>
+        </p>
+        <p>
+            <span>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://github.com/itgoyo/2017/11/28/第一行代码控件部分.html&title=《第一行代码控件部分》 — ITGOYO技术站&pic=https://github.com/itgoyo/img/kotlin_250x250.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://github.com/itgoyo/2017/11/28/第一行代码控件部分.html&title=《第一行代码控件部分》 — ITGOYO技术站&source=talk is cheap,show me the girl." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://github.com/itgoyo/2017/11/28/第一行代码控件部分.html" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《第一行代码控件部分》 — ITGOYO技术站&url=https://github.com/itgoyo/2017/11/28/第一行代码控件部分.html&via=https://github.com/itgoyo" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://github.com/itgoyo/2017/11/28/第一行代码控件部分.html" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACt0lEQVR42u3a0U6FQAwEUP//pzX67IWZ3S5qPDwZLwJHE1qnfXuLj/evI/n61aft1a5/avjAw8PDW3r0V0f+6O0VEvD13a/viIeHh3eal9zy+syb28Sv+2tG/sx4eHh4v4HX9q7Jaz1vmvHw8PD+Oi8pA0nBmGq78fDw8J7nJVFCG/Vek/JS8VDWgoeHhxfzZgdgz3z9Y/M9PDy8f897L4+2GOQloR2qRU+Lh4eHd4C3P2RKFrDyuHanshX/MeDh4eGN8pIfS17uO+FsUk6KPwweHh7eKK99EedlIF+cmmqpv7kmHh4e3jHebByQlIe2qCyeiYeHh/cILwkF8kffLzBJeFHHEHh4eHgbvKkR1FpIkce47Wjtm6wFDw8Pb4g3/AreWA5oqYszMTw8PLwhXtte7wQQO8sE7RPi4eHhPcNrh/1rqwb54659ioeHh3eOt7bY1EYDeYPe5ijFHwAPDw/vAC85qW2X28KTA/KyhIeHhzfLywdadRCw1IjvxB83S1d4eHh4Q7y2emxtKMSv/jYWaRcU8PDw8KZ4+SXWwGsRcN7o3yw34OHh4Q3xFlvSoXHX2pkFHg8PD+8Yr12Q2okqplYEokAEDw8P7wAveX/mr/X2O8l4LB+w3exE4OHh4R3gtYFsG7zmi1nJCK1ou/Hw8PBGeUnTnIcR+brVcAKdLF3h4eHhHeC1jexOE5xHD21TjoeHh3eatxat5s13UhJ2xl31gYeHh7fNWysMbfi7NvRq2/eblAUPDw9viLdfMJLi0YYRbagxVkLw8PDwYt5UAJEXjJ3FrHYgh4eHh3eOtx9M5HHDFD66Fx4eHt6P8taa4522O8HfPBUeHh7eL+CtDcZ2lqvy8wcKAx4eHl7M21mWykdlbfnJC8DLT/Hw8PAO8KYGYDl17Qr5L/3IfA8PDw/v8/gAbdBpzi+ZwbkAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+
+lazyScripts.push('//s95.cnzz.com/z_stat.php?id=1261686164&web_id=1261686164')
+
+</script>
+
+<script src="/js/main.min.js?v=1.5.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.5.2" async></script>
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+</body>
+</html>
