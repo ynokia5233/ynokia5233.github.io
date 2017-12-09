@@ -34,28 +34,28 @@
     <meta name="sogou_site_verification" content="AIePRXkUI4"/>
     
     
-    <link rel="canonical" href="http://www.kotlinandroid.net/2017/02/06/Kotlin 1.1 Beta 2 发布~.html">
+    <link rel="canonical" href="http://www.kotlinandroid.net/2017/12/09/异步和多线程的区别.html">
     
     
-    <title>Kotlin 1.1 Beta 2 发布~ | ITGOYO技术站 | 一个专注发布技术相关与优秀文章的技术网站</title>
+    <title>异步和多线程的区别 | ITGOYO技术站 | 一个专注发布技术相关与优秀文章的技术网站</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="Kotlin">
-    <meta name="description" content="1 协程改包名风波说真的，看到这个标题的时候我还挺兴奋，离 release 又近了一步。不过，看了这篇文章的时候，我就觉得也是醉醉的。发生了啥呢？ 原来，协程相关的依赖统统被标记为 experimental 了，以前叫： 1package kotlin.coroutines 现在呢？ 1package kotlin.coroutines.experimental 这意味着啥？意味着我们在这次更新之">
-<meta name="keywords" content="Kotlin">
+    <meta name="keywords" content="Android">
+    <meta name="description" content="原文地址:https://www.cnblogs.com/dream844/archive/2012/06/12/2546083.html 多线程和异步操作的异同多线程和异步操作两者都可以达到避免调用线程阻塞的目的，从而提高软件的可响应性。甚至有些时候我们就认为多线程和异步操作是等同的概念。但是，多线程和异步操作还是有一些区别的。而这些区别造成了使用多线程和异步操作的时机的区别。 异步操作的本质所">
+<meta name="keywords" content="Android">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Kotlin 1.1 Beta 2 发布~">
-<meta property="og:url" content="https://github.com/itgoyo/2017/02/06/Kotlin 1.1 Beta 2 发布~.html">
+<meta property="og:title" content="异步和多线程的区别">
+<meta property="og:url" content="https://github.com/itgoyo/2017/12/09/异步和多线程的区别.html">
 <meta property="og:site_name" content="ITGOYO技术站">
-<meta property="og:description" content="1 协程改包名风波说真的，看到这个标题的时候我还挺兴奋，离 release 又近了一步。不过，看了这篇文章的时候，我就觉得也是醉醉的。发生了啥呢？ 原来，协程相关的依赖统统被标记为 experimental 了，以前叫： 1package kotlin.coroutines 现在呢？ 1package kotlin.coroutines.experimental 这意味着啥？意味着我们在这次更新之">
+<meta property="og:description" content="原文地址:https://www.cnblogs.com/dream844/archive/2012/06/12/2546083.html 多线程和异步操作的异同多线程和异步操作两者都可以达到避免调用线程阻塞的目的，从而提高软件的可响应性。甚至有些时候我们就认为多线程和异步操作是等同的概念。但是，多线程和异步操作还是有一些区别的。而这些区别造成了使用多线程和异步操作的时机的区别。 异步操作的本质所">
 <meta property="og:image" content="https://github.com/assets/getqrcode.jpeg">
-<meta property="og:updated_time" content="2017-11-23T13:07:32.000Z">
+<meta property="og:updated_time" content="2017-12-09T13:15:20.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Kotlin 1.1 Beta 2 发布~">
-<meta name="twitter:description" content="1 协程改包名风波说真的，看到这个标题的时候我还挺兴奋，离 release 又近了一步。不过，看了这篇文章的时候，我就觉得也是醉醉的。发生了啥呢？ 原来，协程相关的依赖统统被标记为 experimental 了，以前叫： 1package kotlin.coroutines 现在呢？ 1package kotlin.coroutines.experimental 这意味着啥？意味着我们在这次更新之">
+<meta name="twitter:title" content="异步和多线程的区别">
+<meta name="twitter:description" content="原文地址:https://www.cnblogs.com/dream844/archive/2012/06/12/2546083.html 多线程和异步操作的异同多线程和异步操作两者都可以达到避免调用线程阻塞的目的，从而提高软件的可响应性。甚至有些时候我们就认为多线程和异步操作是等同的概念。但是，多线程和异步操作还是有一些区别的。而这些区别造成了使用多线程和异步操作的时机的区别。 异步操作的本质所">
 <meta name="twitter:image" content="https://github.com/assets/getqrcode.jpeg">
     
         <link rel="alternative" href="/atom.xml" title="ITGOYO技术站" type="application/atom+xml">
@@ -211,7 +211,7 @@ var _hmt = _hmt || [];
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Kotlin 1.1 Beta 2 发布~</div>
+        <div class="flex-col header-title ellipsis">异步和多线程的区别</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -233,15 +233,15 @@ var _hmt = _hmt || [];
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Kotlin 1.1 Beta 2 发布~</h1>
+        <h1 class="title">异步和多线程的区别</h1>
         <h5 class="subtitle">
             
-                <time datetime="2017-02-06T00:14:15.000Z" itemprop="datePublished" class="page-time">
-  2017-02-06
+                <time datetime="2017-12-09T13:13:38.000Z" itemprop="datePublished" class="page-time">
+  2017-12-09
 </time>
 
 
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/官方动态/">官方动态</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/源码分析/">源码分析</a></li></ul>
 
             
         </h5>
@@ -257,20 +257,20 @@ var _hmt = _hmt || [];
     <aside class="post-widget">
         <nav class="post-toc-wrap" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-协程改包名风波"><span class="post-toc-number">1.</span> <span class="post-toc-text">1 协程改包名风波</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-兼容-1-0"><span class="post-toc-number">2.</span> <span class="post-toc-text">2 兼容 1.0</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-小结"><span class="post-toc-number">3.</span> <span class="post-toc-text">3 小结</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#多线程和异步操作的异同"><span class="post-toc-number">1.</span> <span class="post-toc-text">多线程和异步操作的异同</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#异步操作的本质"><span class="post-toc-number">2.</span> <span class="post-toc-text">异步操作的本质</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#线程的本质"><span class="post-toc-number">3.</span> <span class="post-toc-text">线程的本质</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#异步操作的优缺点"><span class="post-toc-number">4.</span> <span class="post-toc-text">异步操作的优缺点</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#多线程的优缺点"><span class="post-toc-number">5.</span> <span class="post-toc-text">多线程的优缺点</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#适用范围"><span class="post-toc-number">6.</span> <span class="post-toc-text">适用范围</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#异步调用与多线程"><span class="post-toc-number">7.</span> <span class="post-toc-text">异步调用与多线程</span></a></li></ol>
         </nav>
     </aside>
     
-<article id="post-Kotlin 1.1 Beta 2 发布~"
+<article id="post-异步和多线程的区别"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Kotlin 1.1 Beta 2 发布~</h1>
+        <h1 class="post-card-title">异步和多线程的区别</h1>
         <div class="post-meta">
-            <time class="post-time" title="2017-02-06 08:14:15" datetime="2017-02-06T00:14:15.000Z"  itemprop="datePublished">2017-02-06</time>
+            <time class="post-time" title="2017-12-09 21:13:38" datetime="2017-12-09T13:13:38.000Z"  itemprop="datePublished">2017-12-09</time>
 
             
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/官方动态/">官方动态</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/源码分析/">源码分析</a></li></ul>
 
 
 
@@ -284,19 +284,19 @@ var _hmt = _hmt || [];
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h2 id="1-协程改包名风波"><a href="#1-协程改包名风波" class="headerlink" title="1 协程改包名风波"></a>1 协程改包名风波</h2><p>说真的，看到这个标题的时候我还挺兴奋，离 release 又近了一步。不过，看了这篇文章的时候，我就觉得也是醉醉的。发生了啥呢？</p>
-<p>原来，协程相关的依赖统统被标记为 experimental 了，以前叫：</p>
-<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> kotlin.coroutines</div></pre></td></tr></table></figure>
-<p>现在呢？</p>
-<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> kotlin.coroutines.experimental</div></pre></td></tr></table></figure>
-<p>这意味着啥？意味着我们在这次更新之后，还得把原来的协程代码的包重新导入一遍，另外，如果你想使用协程，那么你还需要在配置当中呢启用它，例如 gradle 配置需要加入：</p>
-<figure class="highlight gradle"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">kotlin &#123;</div><div class="line">    experimental &#123;</div><div class="line">        coroutines <span class="string">'enable'</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>你在升级所有的依赖的时候，确保它是兼容 1.1.0-beta-38 的，这一点很重要，不然等着报错吧！</p>
-<p>话说，为啥要这么搞呢？按照官方的说法就是，协程这个特性目前已经实现的非常不错了，内置 API 非常少，灵活扩展性也强，不过他们觉得这个东西还有很大的潜力，也不能就这样作为最终版本给大家放出来，而作为实验特性交给大家使用呢，更多地还是希望大家能提提意见啥的。嗯，说实在的，协程这个特性真不是个小特性。</p>
-<h2 id="2-兼容-1-0"><a href="#2-兼容-1-0" class="headerlink" title="2 兼容 1.0"></a>2 兼容 1.0</h2><p>话说，1.1 的编译器终于声称兼容 1.0 的源码了，这表明我们再也不用搞两个 IntelliJ 分别装 1.0 稳定版的插件和 1.1 Beta 版的插件了。</p>
-<p>是的，就算你不用 1.1 的特性，你装 1.1 的插件，用 1.1 的编译器，写 1.0 的代码毫无压力！！</p>
-<p>什么？你问我试了没？当然，我一直用最新的插件，折腾地挺苦的 T T，劝诸君还是装稳定版吧，吃螃蟹要做好心理准备~！</p>
-<h2 id="3-小结"><a href="#3-小结" class="headerlink" title="3 小结"></a>3 小结</h2><p>浏览了一下 1.1Beta 2 的主要特性，其实就是改改包名，修几个小 Bug，大的改动基本没有了。如果大家想要尽早上手 1.1 的特性，那么就从现在开始吧~</p>
+            <p>原文地址:<a href="https://www.cnblogs.com/dream844/archive/2012/06/12/2546083.html" target="_blank" rel="external">https://www.cnblogs.com/dream844/archive/2012/06/12/2546083.html</a></p>
+<h3 id="多线程和异步操作的异同"><a href="#多线程和异步操作的异同" class="headerlink" title="多线程和异步操作的异同"></a>多线程和异步操作的异同</h3><p>多线程和异步操作两者都可以达到避免调用线程阻塞的目的，从而提高软件的可响应性。甚至有些时候我们就认为多线程和异步操作是等同的概念。但是，多线程和异步操作还是有一些区别的。而这些区别造成了使用多线程和异步操作的时机的区别。</p>
+<h3 id="异步操作的本质"><a href="#异步操作的本质" class="headerlink" title="异步操作的本质"></a>异步操作的本质</h3><p>所有的程序最终都会由计算机硬件来执行，所以为了更好的理解异步操作的本质，我们有必要了解一下它的硬件基础。 熟悉电脑硬件的朋友肯定对DMA这个词不陌生，硬盘、光驱的技术规格中都有明确DMA的模式指标，其实网卡、声卡、显卡也是有DMA功能的。DMA就是直 接内存访问的意思，也就是说，拥有DMA功能的硬件在和内存进行数据交换的时候可以不消耗CPU资源。只要CPU在发起数据传输时发送一个指令，硬件就开 始自己和内存交换数据，在传输完成之后硬件会触发一个中断来通知操作完成。这些无须消耗CPU时间的I/O操作正是异步操作的硬件基础。所以即使在DOS 这样的单进程（而且无线程概念）系统中也同样可以发起异步的DMA操作。</p>
+<h3 id="线程的本质"><a href="#线程的本质" class="headerlink" title="线程的本质"></a>线程的本质</h3><p>线程不是一个计算机硬件的功能，而是操作系统提供的一种逻辑功能，线程本质上是进程中一段并发运行的代码，所以线程需要操作系统投入CPU资源来运行和调度。</p>
+<h3 id="异步操作的优缺点"><a href="#异步操作的优缺点" class="headerlink" title="异步操作的优缺点"></a>异步操作的优缺点</h3><p>因为异步操作无须额外的线程负担，并且使用回调的方式进行处理，在设计良好的情况下，处理函数可以不必使用共享变量（即使无法完全不用，最起码可以减少 共享变量的数量），减少了死锁的可能。当然异步操作也并非完美无暇。编写异步操作的复杂程度较高，程序主要使用回调方式进行处理，与普通人的思维方式有些 初入，而且难以调试。</p>
+<h3 id="多线程的优缺点"><a href="#多线程的优缺点" class="headerlink" title="多线程的优缺点"></a>多线程的优缺点</h3><p>多线程的优点很明显，线程中的处理程序依然是顺序执行，符合普通人的思维习惯，所以编程简单。但是多线程的缺点也同样明显，线程的使用（滥用）会给系统带来上下文切换的额外负担。并且线程间的共享变量可能造成死锁的出现。</p>
+<h3 id="适用范围"><a href="#适用范围" class="headerlink" title="适用范围"></a>适用范围</h3><p>在了解了线程与异步操作各自的优缺点之后，我们可以来探讨一下线程和异步的合理用途。我认为：当需要执行I/O操作时，使用异步操作比使用线程+同步 I/O操作更合适。I/O操作不仅包括了直接的文件、网络的读写，还包括数据库操作、Web Service、HttpRequest以及.net Remoting等跨进程的调用。</p>
+<p>而线程的适用范围则是那种需要长时间CPU运算的场合，例如耗时较长的图形处理和算法执行。但是往 往由于使用线程编程的简单和符合习惯，所以很多朋友往往会使用线程来执行耗时较长的I/O操作。这样在只有少数几个并发操作的时候还无伤大雅，如果需要处 理大量的并发操作时就不合适了。</p>
+<h3 id="异步调用与多线程"><a href="#异步调用与多线程" class="headerlink" title="异步调用与多线程"></a>异步调用与多线程</h3><p>异步调用并不是要减少线程的开销, 它的主要目的是让调用方法的主线程不需要同步等待在这个函数调用上, 从而可以让主线程继续执行它下面的代码.与此同时, 系统会通过从ThreadPool中取一个线程来执行,帮助我们将我们要写/读的数据发送到网卡.由于不需要我们等待, 我们等于同时做了两件事情. 这个效果跟自己另外启动一个线程来执行等待方式的写操作是一样的.但是, 异步线程可以利用操作系统/.Net的线程池, 系统可以根据吞吐量动态的管理线程池的大小.</p>
+<blockquote>
+<p>异步与多线程,从辩证关系上来看,异步和多线程并不时一个同等关系,异步是目的,多线程只是我们实现异步的一个手段.什么是异步:异步是当一个调用请求发送给被调用者,而调用者不用等待其结果的返回.实现异步可以采用多线程技术或则交给另外的进程来处理</p>
+</blockquote>
+<hr>
 <div align="center"><br><br>发现更多有趣好玩的，欢迎关注我的微信公众号<br><br><img src="/assets/getqrcode.jpeg" alt=""><br></div>
 
         </div>
@@ -305,7 +305,7 @@ var _hmt = _hmt || [];
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2017-11-23T13:07:32.000Z" itemprop="dateUpdated">2017-11-23 21:07:32</time>
+    Last updated: <time datetime="2017-12-09T13:15:20.000Z" itemprop="dateUpdated">2017-12-09 21:15:20</time>
 </span><br>
 
 
@@ -328,7 +328,7 @@ var _hmt = _hmt || [];
 
         <div class="post-footer">
             
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Kotlin/">Kotlin</a></li></ul>
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
 
 
             
@@ -338,7 +338,7 @@ var _hmt = _hmt || [];
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://github.com/itgoyo/2017/02/06/Kotlin 1.1 Beta 2 发布~.html&title=《Kotlin 1.1 Beta 2 发布~》 — ITGOYO技术站&pic=https://github.com/itgoyo/img/kotlin_250x250.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://github.com/itgoyo/2017/12/09/异步和多线程的区别.html&title=《异步和多线程的区别》 — ITGOYO技术站&pic=https://github.com/itgoyo/img/kotlin_250x250.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -348,22 +348,22 @@ var _hmt = _hmt || [];
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://github.com/itgoyo/2017/02/06/Kotlin 1.1 Beta 2 发布~.html&title=《Kotlin 1.1 Beta 2 发布~》 — ITGOYO技术站&source=talk is cheap,show me the girl." data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://github.com/itgoyo/2017/12/09/异步和多线程的区别.html&title=《异步和多线程的区别》 — ITGOYO技术站&source=talk is cheap,show me the girl." data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://github.com/itgoyo/2017/02/06/Kotlin 1.1 Beta 2 发布~.html" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://github.com/itgoyo/2017/12/09/异步和多线程的区别.html" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Kotlin 1.1 Beta 2 发布~》 — ITGOYO技术站&url=https://github.com/itgoyo/2017/02/06/Kotlin 1.1 Beta 2 发布~.html&via=https://github.com/itgoyo" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《异步和多线程的区别》 — ITGOYO技术站&url=https://github.com/itgoyo/2017/12/09/异步和多线程的区别.html&via=https://github.com/itgoyo" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://github.com/itgoyo/2017/02/06/Kotlin 1.1 Beta 2 发布~.html" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://github.com/itgoyo/2017/12/09/异步和多线程的区别.html" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -383,21 +383,14 @@ var _hmt = _hmt || [];
     </div>
 
     
-<nav class="post-nav flex-row flex-justify-between">
-  
-    <div class="waves-block waves-effect prev">
-      <a href="/2017/02/17/Kotlin 1.1 Release Candidate is Here.html" id="post-prev" class="post-nav-link">
-        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">[译]Kotlin 1.1 候选版本来啦</h4>
-      </a>
-    </div>
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/2017/01/02/Kotlin 1.0.6.html" id="post-next" class="post-nav-link">
+      <a href="/2017/12/06/60天引爆你的学习力.html" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Kotlin 1.0.6</h4>
+        <h4 class="title">60天引爆你的学习力</h4>
       </a>
     </div>
   
@@ -516,7 +509,7 @@ var _hmt = _hmt || [];
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://github.com/itgoyo/2017/02/06/Kotlin 1.1 Beta 2 发布~.html&title=《Kotlin 1.1 Beta 2 发布~》 — ITGOYO技术站&pic=https://github.com/itgoyo/img/kotlin_250x250.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://github.com/itgoyo/2017/12/09/异步和多线程的区别.html&title=《异步和多线程的区别》 — ITGOYO技术站&pic=https://github.com/itgoyo/img/kotlin_250x250.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -526,22 +519,22 @@ var _hmt = _hmt || [];
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://github.com/itgoyo/2017/02/06/Kotlin 1.1 Beta 2 发布~.html&title=《Kotlin 1.1 Beta 2 发布~》 — ITGOYO技术站&source=talk is cheap,show me the girl." data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://github.com/itgoyo/2017/12/09/异步和多线程的区别.html&title=《异步和多线程的区别》 — ITGOYO技术站&source=talk is cheap,show me the girl." data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://github.com/itgoyo/2017/02/06/Kotlin 1.1 Beta 2 发布~.html" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://github.com/itgoyo/2017/12/09/异步和多线程的区别.html" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Kotlin 1.1 Beta 2 发布~》 — ITGOYO技术站&url=https://github.com/itgoyo/2017/02/06/Kotlin 1.1 Beta 2 发布~.html&via=https://github.com/itgoyo" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《异步和多线程的区别》 — ITGOYO技术站&url=https://github.com/itgoyo/2017/12/09/异步和多线程的区别.html&via=https://github.com/itgoyo" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://github.com/itgoyo/2017/02/06/Kotlin 1.1 Beta 2 发布~.html" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://github.com/itgoyo/2017/12/09/异步和多线程的区别.html" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -552,7 +545,7 @@ var _hmt = _hmt || [];
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACrElEQVR42u3aQVLDQAwEwPz/0+EKBXFG0ioEqn1KGcfZ9sErRrrd4uP+6UjOf/7rozP3b0dy/rZx4OHh4Q2WnvzkNSP/fL3062uSNePh4eFt8/JF59c8+eH4ynyTwMPDw/tbvOq3EjYeHh7e/+CdKqCT88n98fDw8H6Ll9/6LGBSUh/OWvDw8PBiXt5Fep/PK/09PDw8vHFXfbJJTErnfNTgyWrx8PDwFnj5C7eKnw9O9b6Lh4eH93re9Ut/0iTrbTnJBvNkJXh4eHhrvCSWTYarJgvKH24hwMXDw8M7yqu2lLYZp4IPPDw8vG1e8vPVMjd50eeYaqGPh4eHt82rlqqnYJN2V7Sd4OHh4S3zqtFA7/q8YVbdrgqtLzw8PLwBr1eFTsrx62vybSZZIR4eHt4GbxKeTqLeSTutML6Ah4eHt8zLt4pebDEZ4aqW2l/CCDw8PLyjvPyohra9iLYaeZQZeHh4eId4eYGbl8W9eCJ/WHmUjIeHh3eWNw9V8wijmi5Xw5EfRHh4eHhrvKQBVn2hV4PalZEvPDw8vAVe/k9+3ujKY9ze3cpDCXh4eHgv581T4Wp7LCnxC9sJHh4e3lFe/prOg938Pnng2wxB8PDw8BZ4SQyRFL69RldvodXBLDw8PLwNXm+J1aGBvLDOy/Fo+8HDw8Nb4/Vevr3N41QcHG0weHh4eGu8+QBWfn2+FfUi4/K+h4eHhxfz7sUjDxqS6/OHkjzWhw0wPDw8vKO8Xvt/3uCvhhEbAw14eHh4E14eMeS3rj7RaswRjQvg4eHhLfOqL+W85d8bzMof0JO74eHh4b0Nr5cZ5yFFbxgrmibDw8PDexveqVd5HtRGDx0PDw9vjdcrfKsLyiOJXokfTUbg4eHhjXm94jhZXG8Itdd+G3X58PDw8FLeB/zZu2AP9PfFAAAAAElFTkSuQmCC" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACr0lEQVR42u3aQU4kMQwFUO5/aUaaFdLQ3f/bSTNIr1aoKIhfFnFk++Mjfj7/Pl9//vrm0fePvvz3ffLl8xVXDx4eHt4o9EdP8k27cA5OtuNFJHh4eHjXeEkyeB5Qnk6eM3JesnF4eHh4P8sbLhCHnl+p8fDw8H4jL0kP+Qbh4eHh/UZeUoxI/io5+tuL9ZtqLXh4eHhnKq7Rhfj9P1/v7+Hh4eGNuurtsZtfc/PRgU20eHh4eDd4s6JqHtBmDqodIIhqLXh4eHhHebOmVF6inTXSDmw0Hh4e3lHepqG1SRinxgVerIuHh4d3jZc0mYYLlA2wJA0UiQcPDw/vAu/9y+eX+HZzDwxd4eHh4Y14s1JC2+xPir95ynmxLh4eHt5R3oFjtywKb0as8lEGPDw8vPfz2qZ+/r4OcZFI8PDw8G7w8qGrfVhJS6xNCVFUeHh4eEd57UjTZiwgedP+t4/2do+Hh4d3lLcpTGzGpDbb9CJOPDw8vAu8WUG2PY2T8kQeYjuUgIeHh3eDt79YtwGdGjgYTkbg4eHhLXjJMm3J4GyCadNPPU2Gh4eHt+a1wwGbdlde2B1+iYeHh3eBlzfmZ8MBeVJpk01RpMDDw8O7xpsd9LMi7GZT6rEGPDw8vKO8fERg1vpq22Pt+EJ0mcbDw8M7ymuP7+R9PqjaFmfzIgUeHh7ePV4b1v6ZrdgOLnxTpcbDw8M7xGvDSq7dbdCbkYVN2RcPDw9vxvssn+QgzgsNbesrv9bj4eHh3eOdSgx5m6r9D3lzrq644OHh4S14s1LsbCBgv2V1mRgPDw/vGi8/3GcDB2fLwXkpBA8PD+//572nqJGXKvDw8PB+lpd8vynd7ksh3/wWDw8P7xqvLUYky7RB582tYhPx8PDwLvBmDbBNqkje71MRHh4e3gXeH9x3K/AqznrMAAAAAElFTkSuQmCC" alt="微信分享二维码">
 </div>
 
 

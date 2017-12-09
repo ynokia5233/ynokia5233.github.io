@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://github.com/itgoyo/"/>
-  <updated>2017-12-07T15:28:53.000Z</updated>
+  <updated>2017-12-09T13:15:20.000Z</updated>
   <id>https://github.com/itgoyo/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>异步和多线程的区别</title>
+    <link href="https://github.com/itgoyo/2017/12/09/%E5%BC%82%E6%AD%A5%E5%92%8C%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%9A%84%E5%8C%BA%E5%88%AB.html"/>
+    <id>https://github.com/itgoyo/2017/12/09/异步和多线程的区别.html</id>
+    <published>2017-12-09T13:13:38.000Z</published>
+    <updated>2017-12-09T13:15:20.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>原文地址:<a href="https://www.cnblogs.com/dream844/archive/2012/06/12/2546083.html" target="_blank" rel="external">https://www.cnblogs.com/dream844/archive/2012/06/12/2546083.html</a></p><h3 id="多线程和异步操作的异同"><a href="#多线程和异步操作的异同" class="headerlink" title="多线程和异步操作的异同"></a>多线程和异步操作的异同</h3><p>多线程和异步操作两者都可以达到避免调用线程阻塞的目的，从而提高软件的可响应性。甚至有些时候我们就认为多线程和异步操作是等同的概念。但是，多线程和异步操作还是有一些区别的。而这些区别造成了使用多线程和异步操作的时机的区别。</p><h3 id="异步操作的本质"><a href="#异步操作的本质" class="headerlink" title="异步操作的本质"></a>异步操作的本质</h3><p>所有的程序最终都会由计算机硬件来执行，所以为了更好的理解异步操作的本质，我们有必要了解一下它的硬件基础。 熟悉电脑硬件的朋友肯定对DMA这个词不陌生，硬盘、光驱的技术规格中都有明确DMA的模式指标，其实网卡、声卡、显卡也是有DMA功能的。DMA就是直 接内存访问的意思，也就是说，拥有DMA功能的硬件在和内存进行数据交换的时候可以不消耗CPU资源。只要CPU在发起数据传输时发送一个指令，硬件就开 始自己和内存交换数据，在传输完成之后硬件会触发一个中断来通知操作完成。这些无须消耗CPU时间的I/O操作正是异步操作的硬件基础。所以即使在DOS 这样的单进程（而且无线程概念）系统中也同样可以发起异步的DMA操作。</p><h3 id="线程的本质"><a href="#线程的本质" class="headerlink" title="线程的本质"></a>线程的本质</h3><p>线程不是一个计算机硬件的功能，而是操作系统提供的一种逻辑功能，线程本质上是进程中一段并发运行的代码，所以线程需要操作系统投入CPU资源来运行和调度。</p><h3 id="异步操作的优缺点"><a href="#异步操作的优缺点" class="headerlink" title="异步操作的优缺点"></a>异步操作的优缺点</h3><p>因为异步操作无须额外的线程负担，并且使用回调的方式进行处理，在设计良好的情况下，处理函数可以不必使用共享变量（即使无法完全不用，最起码可以减少 共享变量的数量），减少了死锁的可能。当然异步操作也并非完美无暇。编写异步操作的复杂程度较高，程序主要使用回调方式进行处理，与普通人的思维方式有些 初入，而且难以调试。</p><h3 id="多线程的优缺点"><a href="#多线程的优缺点" class="headerlink" title="多线程的优缺点"></a>多线程的优缺点</h3><p>多线程的优点很明显，线程中的处理程序依然是顺序执行，符合普通人的思维习惯，所以编程简单。但是多线程的缺点也同样明显，线程的使用（滥用）会给系统带来上下文切换的额外负担。并且线程间的共享变量可能造成死锁的出现。</p><h3 id="适用范围"><a href="#适用范围" class="headerlink" title="适用范围"></a>适用范围</h3><p>在了解了线程与异步操作各自的优缺点之后，我们可以来探讨一下线程和异步的合理用途。我认为：当需要执行I/O操作时，使用异步操作比使用线程+同步 I/O操作更合适。I/O操作不仅包括了直接的文件、网络的读写，还包括数据库操作、Web Service、HttpRequest以及.net Remoting等跨进程的调用。</p><p>而线程的适用范围则是那种需要长时间CPU运算的场合，例如耗时较长的图形处理和算法执行。但是往 往由于使用线程编程的简单和符合习惯，所以很多朋友往往会使用线程来执行耗时较长的I/O操作。这样在只有少数几个并发操作的时候还无伤大雅，如果需要处 理大量的并发操作时就不合适了。</p><h3 id="异步调用与多线程"><a href="#异步调用与多线程" class="headerlink" title="异步调用与多线程"></a>异步调用与多线程</h3><p>异步调用并不是要减少线程的开销, 它的主要目的是让调用方法的主线程不需要同步等待在这个函数调用上, 从而可以让主线程继续执行它下面的代码.与此同时, 系统会通过从ThreadPool中取一个线程来执行,帮助我们将我们要写/读的数据发送到网卡.由于不需要我们等待, 我们等于同时做了两件事情. 这个效果跟自己另外启动一个线程来执行等待方式的写操作是一样的.但是, 异步线程可以利用操作系统/.Net的线程池, 系统可以根据吞吐量动态的管理线程池的大小.</p><blockquote><p>异步与多线程,从辩证关系上来看,异步和多线程并不时一个同等关系,异步是目的,多线程只是我们实现异步的一个手段.什么是异步:异步是当一个调用请求发送给被调用者,而调用者不用等待其结果的返回.实现异步可以采用多线程技术或则交给另外的进程来处理</p></blockquote><hr><div align="center"><br><br>发现更多有趣好玩的，欢迎关注我的微信公众号<br><br><img src="/assets/getqrcode.jpeg" alt=""><br></div>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;原文地址:&lt;a href=&quot;https://www.cnblogs.com/dream844/archive/2012/06/12/2546083.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://www.cnblogs.com/dr
+      
+    
+    </summary>
+    
+      <category term="源码分析" scheme="https://github.com/itgoyo/categories/%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/"/>
+    
+    
+      <category term="Android" scheme="https://github.com/itgoyo/tags/Android/"/>
+    
+  </entry>
   
   <entry>
     <title>60天引爆你的学习力</title>
