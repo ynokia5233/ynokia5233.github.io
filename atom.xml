@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://github.com/itgoyo/"/>
-  <updated>2017-12-09T14:26:07.000Z</updated>
+  <updated>2017-12-24T14:27:02.000Z</updated>
   <id>https://github.com/itgoyo/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Foobar2000</title>
+    <link href="https://github.com/itgoyo/2017/12/24/Foobar2000.html"/>
+    <id>https://github.com/itgoyo/2017/12/24/Foobar2000.html</id>
+    <published>2017-12-24T14:25:12.000Z</published>
+    <updated>2017-12-24T14:27:02.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="Foobar2000"><a href="#Foobar2000" class="headerlink" title="Foobar2000"></a>Foobar2000</h3><p><a href="https://pan.baidu.com/s/1boQosiF" target="_blank" rel="external">Foobar+BBE插件</a></p><p>链接：<a href="https://pan.baidu.com/s/1boQosiF" target="_blank" rel="external">https://pan.baidu.com/s/1boQosiF</a> 密码：bg1x</p><p>软件整体效果如下：</p><p><img src="http://omvbl46i3.bkt.clouddn.com/1b9204fecc08f5c1ce4b9e6c93e074b7.png" alt=""></p><p>小状态栏效果如下：</p><p><img src="http://omvbl46i3.bkt.clouddn.com/3c27b343d04760c794efe0cb52fd3616.png" alt=""></p><p>功能设置界面如下：</p><p><img src="http://omvbl46i3.bkt.clouddn.com/68942a8fda15cbeed411768d530c4ea0.png" alt=""></p><h4 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h4><ul><li>自带专辑封面显示</li><li>桌面歌词显示(据说还可以联网下载歌词，本人没有验证过)</li><li>支持音乐列表查询</li><li>支持自定义音效插件</li></ul><h4 id="插件BBE"><a href="#插件BBE" class="headerlink" title="插件BBE"></a>插件BBE</h4><p>BBE技术不是简单的增强高频波，而是把延迟了的高频波时间提前，将其重新置于基波之前，它也是用一些增强技术来恢复一些被削弱了的高频波。</p><p><img src="http://omvbl46i3.bkt.clouddn.com/2f479d5f2820b8fd50239ef30f602e00.png" alt=""></p><p><img src="http://omvbl46i3.bkt.clouddn.com/7c60c8c7463f09c3799e379bda68ed99.png" alt=""></p><p><img src="http://omvbl46i3.bkt.clouddn.com/a31bfc69f2de74dfa75d33c2f00abc56.png" alt=""></p><h5 id="安装步骤"><a href="#安装步骤" class="headerlink" title="安装步骤"></a>安装步骤</h5><ul><li>安装BBE.Sound.All.Plugins.Bundle.VST.RTAS.v1.0.9.20r3.x86.x64-ASSiGN</li><li>复制foo_vst_0903/foo_vst.dll到foobar目录中的components里面</li><li>打开设置界面选择组件模块会新增<code>VST plug-ins</code>,然后选择add去添加你刚刚安装文件夹里面的组件默认路径<code>C:\Program Files (x86)\Steinberg\Vstplugins\BBE Sound</code></li><li>设置-播放-DSP管理器-选择<code>D82 Sonic Maximizer</code>-配置所选</li></ul><p>最后会出现如下图所示的插件</p><p><img src="http://omvbl46i3.bkt.clouddn.com/cb9702fe3412a2d2bb858b23230f0218.png" alt=""></p><p><code>in</code>表示<code>Maximizer on</code></p><ul><li>LO CONTOUR: 调节低频激励的量，调整低频部分的相位补偿量</li><li>PROCESS: 调节高频激励的量，调整高频部分的相位补偿量</li><li>OUTPUT LEVEL: 调节处理后信号的电平。可以有效的避免当音频经过处理后，因为电平过载所产生的爆音。</li></ul><p>右侧的两排LED灯用来显示BBE D82 Sonic Maximizer输出信号的大小（处理以后的信号大小）。每个LED指示灯代表一定单位数量的输出电平的大小，单位是分贝。例如：”0”代表0dBFs信号音量，”-6”代表-6dBFs，以此类推。在固定输入信号大小的情况下，增加BBE Process和LO Contour的数量将提升输出信号音量，LED显示也会更加明亮。顶部Clip的LED灯可以用来监视输出信号大小，当输出信号超过0dBFs时Clip的LED灯将亮起来，这也就意味着输出信号失真了。</p><p>具体效果怎么样可以自己用耳朵反复去试听，然后选出自己合适的效果</p><p><a href="https://www.youtube.com/watch?v=sif-cOYWLfY" target="_blank" rel="external">youtube软件测试对比效果</a></p><hr><div align="center"><br><br>发现更多有趣好玩的，欢迎关注我的微信公众号<br><br><img src="/assets/getqrcode.jpeg" alt=""><br></div>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;Foobar2000&quot;&gt;&lt;a href=&quot;#Foobar2000&quot; class=&quot;headerlink&quot; title=&quot;Foobar2000&quot;&gt;&lt;/a&gt;Foobar2000&lt;/h3&gt;&lt;p&gt;&lt;a href=&quot;https://pan.baidu.com/s/1boQo
+      
+    
+    </summary>
+    
+      <category term="生活随笔" scheme="https://github.com/itgoyo/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94/"/>
+    
+    
+      <category term="生活随笔" scheme="https://github.com/itgoyo/tags/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94/"/>
+    
+  </entry>
   
   <entry>
     <title>很认真的聊一聊程序员的自我修养</title>

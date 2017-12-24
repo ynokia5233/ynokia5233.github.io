@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    
+
+    
+
+    
+
+
+<!-- Baidu Push -->
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+<!-- End Baidu Push -->
+
+
+    <meta charset="utf-8">
+    
+    <meta name="google-site-verification" content="true">
+    <meta name="baidu-site-verification" content="97dbRVWfVh" />
+    <meta name="sogou_site_verification" content="AIePRXkUI4"/>
+    
+    
+    <link rel="canonical" href="http://www.kotlinandroid.net/2017/12/24/Foobar2000.html">
+    
+    
+    <title>Foobar2000 | ITGOYO技术站 | 一个专注发布技术相关与优秀文章的技术网站</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="生活随笔">
+    <meta name="description" content="Foobar2000Foobar+BBE插件 链接：https://pan.baidu.com/s/1boQosiF 密码：bg1x 软件整体效果如下：  小状态栏效果如下：  功能设置界面如下：  功能 自带专辑封面显示 桌面歌词显示(据说还可以联网下载歌词，本人没有验证过) 支持音乐列表查询 支持自定义音效插件  插件BBEBBE技术不是简单的增强高频波，而是把延迟了的高频波时间提前，将其重新">
+<meta name="keywords" content="Foobar2000">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Foobar2000">
+<meta property="og:url" content="https://github.com/itgoyo/2017/12/24/Foobar2000.html">
+<meta property="og:site_name" content="ITGOYO技术站">
+<meta property="og:description" content="Foobar2000Foobar+BBE插件 链接：https://pan.baidu.com/s/1boQosiF 密码：bg1x 软件整体效果如下：  小状态栏效果如下：  功能设置界面如下：  功能 自带专辑封面显示 桌面歌词显示(据说还可以联网下载歌词，本人没有验证过) 支持音乐列表查询 支持自定义音效插件  插件BBEBBE技术不是简单的增强高频波，而是把延迟了的高频波时间提前，将其重新">
+<meta property="og:image" content="http://omvbl46i3.bkt.clouddn.com/1b9204fecc08f5c1ce4b9e6c93e074b7.png">
+<meta property="og:image" content="http://omvbl46i3.bkt.clouddn.com/3c27b343d04760c794efe0cb52fd3616.png">
+<meta property="og:image" content="http://omvbl46i3.bkt.clouddn.com/68942a8fda15cbeed411768d530c4ea0.png">
+<meta property="og:image" content="http://omvbl46i3.bkt.clouddn.com/2f479d5f2820b8fd50239ef30f602e00.png">
+<meta property="og:image" content="http://omvbl46i3.bkt.clouddn.com/7c60c8c7463f09c3799e379bda68ed99.png">
+<meta property="og:image" content="http://omvbl46i3.bkt.clouddn.com/a31bfc69f2de74dfa75d33c2f00abc56.png">
+<meta property="og:image" content="http://omvbl46i3.bkt.clouddn.com/cb9702fe3412a2d2bb858b23230f0218.png">
+<meta property="og:image" content="https://github.com/assets/getqrcode.jpeg">
+<meta property="og:updated_time" content="2017-12-24T14:27:02.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Foobar2000">
+<meta name="twitter:description" content="Foobar2000Foobar+BBE插件 链接：https://pan.baidu.com/s/1boQosiF 密码：bg1x 软件整体效果如下：  小状态栏效果如下：  功能设置界面如下：  功能 自带专辑封面显示 桌面歌词显示(据说还可以联网下载歌词，本人没有验证过) 支持音乐列表查询 支持自定义音效插件  插件BBEBBE技术不是简单的增强高频波，而是把延迟了的高频波时间提前，将其重新">
+<meta name="twitter:image" content="http://omvbl46i3.bkt.clouddn.com/1b9204fecc08f5c1ce4b9e6c93e074b7.png">
+    
+        <link rel="alternative" href="/atom.xml" title="ITGOYO技术站" type="application/atom+xml">
+    
+    <link rel="shortcut icon" href="/img/kotlin.png">
+    <link rel="stylesheet" href="/css/style.css?v=1.5.2">
+    <script>window.lazyScripts=[]</script>
+
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?c16d3c10c9ea6c6fe749d9926d52b0d6";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" style="
+    width: 300px;"class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand" style="
+          width: 300px;">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/kotlin_250x250.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">itgoyo</h5>
+          <a href="mailto:itgoyo@gmail.com" title="itgoyo@gmail.com" class="mail">itgoyo@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col" style="
+        width: 300px;">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                文章
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/books"  >
+                <i class="icon icon-lg icon-book"></i>
+                书籍
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/movies"  >
+                <i class="icon icon-lg icon-film"></i>
+                电影
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://www.kotlinandroid.net/album"  >
+                <i class="icon icon-lg icon-photo"></i>
+                相册
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="Mailto:itgoyo@kotlinandroid.net"  >
+                <i class="icon icon-lg icon-envelope"></i>
+                邮件
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://www.kotlinandroid.net/timeline"  >
+                <i class="icon icon-lg icon-calendar"></i>
+                时间轴
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/itgoyo"  >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://www.kotlinandroid.net/resume"  >
+                <i class="icon icon-lg icon-file-text"></i>
+                Résumé
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://hukai.me/android-training-course-in-chinese/index.html"  >
+                <i class="icon icon-lg icon-android"></i>
+                官方培训课程
+              </a>
+            </li>
+        
+
+      <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=300 height=270 src="https://music.163.com/outchain/player?type=0&id=120897804&auto=1&height=430"></iframe>
+
+        <div class="div_right_bottom" align="center">
+          <img src="/assets/getqrcode.jpeg">
+          微信公众号
+          </div>
+
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Foobar2000</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Foobar2000</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2017-12-24T14:25:12.000Z" itemprop="datePublished" class="page-time">
+  2017-12-24
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/生活随笔/">生活随笔</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Foobar2000"><span class="post-toc-number">1.</span> <span class="post-toc-text">Foobar2000</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#功能"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">功能</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#插件BBE"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">插件BBE</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#安装步骤"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">安装步骤</span></a></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-Foobar2000"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Foobar2000</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2017-12-24 22:25:12" datetime="2017-12-24T14:25:12.000Z"  itemprop="datePublished">2017-12-24</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/生活随笔/">生活随笔</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h3 id="Foobar2000"><a href="#Foobar2000" class="headerlink" title="Foobar2000"></a>Foobar2000</h3><p><a href="https://pan.baidu.com/s/1boQosiF" target="_blank" rel="external">Foobar+BBE插件</a></p>
+<p>链接：<a href="https://pan.baidu.com/s/1boQosiF" target="_blank" rel="external">https://pan.baidu.com/s/1boQosiF</a> 密码：bg1x</p>
+<p>软件整体效果如下：</p>
+<p><img src="http://omvbl46i3.bkt.clouddn.com/1b9204fecc08f5c1ce4b9e6c93e074b7.png" alt=""></p>
+<p>小状态栏效果如下：</p>
+<p><img src="http://omvbl46i3.bkt.clouddn.com/3c27b343d04760c794efe0cb52fd3616.png" alt=""></p>
+<p>功能设置界面如下：</p>
+<p><img src="http://omvbl46i3.bkt.clouddn.com/68942a8fda15cbeed411768d530c4ea0.png" alt=""></p>
+<h4 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h4><ul>
+<li>自带专辑封面显示</li>
+<li>桌面歌词显示(据说还可以联网下载歌词，本人没有验证过)</li>
+<li>支持音乐列表查询</li>
+<li>支持自定义音效插件</li>
+</ul>
+<h4 id="插件BBE"><a href="#插件BBE" class="headerlink" title="插件BBE"></a>插件BBE</h4><p>BBE技术不是简单的增强高频波，而是把延迟了的高频波时间提前，将其重新置于基波之前，它也是用一些增强技术来恢复一些被削弱了的高频波。</p>
+<p><img src="http://omvbl46i3.bkt.clouddn.com/2f479d5f2820b8fd50239ef30f602e00.png" alt=""></p>
+<p><img src="http://omvbl46i3.bkt.clouddn.com/7c60c8c7463f09c3799e379bda68ed99.png" alt=""></p>
+<p><img src="http://omvbl46i3.bkt.clouddn.com/a31bfc69f2de74dfa75d33c2f00abc56.png" alt=""></p>
+<h5 id="安装步骤"><a href="#安装步骤" class="headerlink" title="安装步骤"></a>安装步骤</h5><ul>
+<li>安装BBE.Sound.All.Plugins.Bundle.VST.RTAS.v1.0.9.20r3.x86.x64-ASSiGN</li>
+<li>复制foo_vst_0903/foo_vst.dll到foobar目录中的components里面</li>
+<li>打开设置界面选择组件模块会新增<code>VST plug-ins</code>,然后选择add去添加你刚刚安装文件夹里面的组件默认路径<code>C:\Program Files (x86)\Steinberg\Vstplugins\BBE Sound</code></li>
+<li>设置-播放-DSP管理器-选择<code>D82 Sonic Maximizer</code>-配置所选</li>
+</ul>
+<p>最后会出现如下图所示的插件</p>
+<p><img src="http://omvbl46i3.bkt.clouddn.com/cb9702fe3412a2d2bb858b23230f0218.png" alt=""></p>
+<p><code>in</code>表示<code>Maximizer on</code></p>
+<ul>
+<li>LO CONTOUR: 调节低频激励的量，调整低频部分的相位补偿量</li>
+<li>PROCESS: 调节高频激励的量，调整高频部分的相位补偿量</li>
+<li>OUTPUT LEVEL: 调节处理后信号的电平。可以有效的避免当音频经过处理后，因为电平过载所产生的爆音。</li>
+</ul>
+<p>右侧的两排LED灯用来显示BBE D82 Sonic Maximizer输出信号的大小（处理以后的信号大小）。每个LED指示灯代表一定单位数量的输出电平的大小，单位是分贝。例如：”0”代表0dBFs信号音量，”-6”代表-6dBFs，以此类推。在固定输入信号大小的情况下，增加BBE Process和LO Contour的数量将提升输出信号音量，LED显示也会更加明亮。顶部Clip的LED灯可以用来监视输出信号大小，当输出信号超过0dBFs时Clip的LED灯将亮起来，这也就意味着输出信号失真了。</p>
+<p>具体效果怎么样可以自己用耳朵反复去试听，然后选出自己合适的效果</p>
+<p><a href="https://www.youtube.com/watch?v=sif-cOYWLfY" target="_blank" rel="external">youtube软件测试对比效果</a></p>
+<hr>
+<div align="center"><br><br>发现更多有趣好玩的，欢迎关注我的微信公众号<br><br><img src="/assets/getqrcode.jpeg" alt=""><br></div>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2017-12-24T14:27:02.000Z" itemprop="dateUpdated">2017-12-24 22:27:02</time>
+</span><br>
+
+
+        
+    </div>
+    <footer>
+        <a href="https://github.com/itgoyo">
+            <img src="/img/kotlin_250x250.jpg" alt="itgoyo">
+            itgoyo
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/生活随笔/">生活随笔</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://github.com/itgoyo/2017/12/24/Foobar2000.html&title=《Foobar2000》 — ITGOYO技术站&pic=https://github.com/itgoyo/img/kotlin_250x250.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://github.com/itgoyo/2017/12/24/Foobar2000.html&title=《Foobar2000》 — ITGOYO技术站&source=talk is cheap,show me the girl." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://github.com/itgoyo/2017/12/24/Foobar2000.html" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Foobar2000》 — ITGOYO技术站&url=https://github.com/itgoyo/2017/12/24/Foobar2000.html&via=https://github.com/itgoyo" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://github.com/itgoyo/2017/12/24/Foobar2000.html" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2017/12/09/很认真的聊一聊程序员的自我修养.html" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">很认真的聊一聊程序员的自我修养</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+<section class="comments" id="comments">
+    <div id="disqus_thread"></div>
+    <script>
+    var disqus_shortname = 'itgoyo';
+    lazyScripts.push('//' + disqus_shortname + '.disqus.com/embed.js')
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitment_thread"></div>
+    <link rel="stylesheet" href="//unpkg.com/gitment/style/default.css">
+    <!-- <script src="//unpkg.com/gitment/dist/gitment.browser.js"></script> -->
+    <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+    <script>
+        var gitment = new Gitment({
+            owner: 'itgoyo',
+            repo: 'itgoyo.github.io',
+            oauth: {
+                client_id: '464e7c112346fd6daabb',
+                client_secret: '3f78aa47b168a9788b888238a610dff1ac6e51ac',
+            },
+        })
+        gitment.render('comments')
+    </script>
+</section>
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        奖励一杯咖啡!
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/assets/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/assets/img/wechat.jpg" data-alipay="/assets/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+
+    <div class="bottom">
+  
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            <span>itgoyo &copy; 2017</span>  &nbsp&nbsp&nbsp 作者Github地址 欢迎关注 <a href="https://github.com/itgoyo" target="_blank">itgoyo</a>
+              <a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a>
+        </p>
+        <p>
+        感谢西部数码提供<a href="http://www.west.cn/index.asp?ReferenceID=1232730"
+        target="_blank">虚拟主机</a>
+        </p>
+        <p>
+            <span>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://github.com/itgoyo/2017/12/24/Foobar2000.html&title=《Foobar2000》 — ITGOYO技术站&pic=https://github.com/itgoyo/img/kotlin_250x250.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://github.com/itgoyo/2017/12/24/Foobar2000.html&title=《Foobar2000》 — ITGOYO技术站&source=talk is cheap,show me the girl." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://github.com/itgoyo/2017/12/24/Foobar2000.html" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Foobar2000》 — ITGOYO技术站&url=https://github.com/itgoyo/2017/12/24/Foobar2000.html&via=https://github.com/itgoyo" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://github.com/itgoyo/2017/12/24/Foobar2000.html" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACNklEQVR42u3a207rMBAF0P7/TxfpPCG1DXuPAzpxlp9QCa5XkEaey+MRr+e/9f3nT5+8fv66z/Hzr3912sLAwLgs43m48oN+eqYlHe/5kYqBgXEDRh5kk5B6fNw2uB8/g4GBgZEcdyXIYmBgYPwGIwmd7XExMDAwEkaSTM6KaMmB8sT4hFwcAwPjgoxZY+Bvfv71/gYGBsZ/z3iWq76uldfB2cLAwNib0Rb9k2GLttA2axtEN1wMDIztGLOUcgW8Mrrx5nsxMDC2ZuRBbVZoa9sJ7YvAwMDAyAtkSxe78jVFJTkMDIwtGPmx1puax0+2yfBwKgQDA+OCjKRVOTtEDps1TX/YBwMDYyNGWz5bSTtnrylKqjEwMLZmnHuzSjLm9YPW5TYMDIyLM1YahG0lL/+u9jKKgYFxB8ZKE7FtJJw1bPEm4GJgYGzKWA+v7QhFO2xRVw0xMDC2Y+RF/CT5XB/FGA5/YGBg3IAxC4uzQY32lUXNAwwMjK0Zs9CZl/hnh85D9sf/DAYGxkaMtjHQfpKU29rIiYGBgbFSsWt3yxuWw3IbBgbGFozZIWbPzFoC9RkwMDC2YzzLlY9f5MWyJNH9Ia3FwMDYmtE2EdvAetYwWZvcYmBg7MeYBdlZmWxlfq2422JgYGzKSLZun2kvkW0S+ybgYmBg3J6xcqzkIpiTMDAwMPIUNP9tPnIxHMLAwMC4AWPWDMh3aFsFyUkwMDDuw2gbA8dbrF/78gmKR7swMDCux/gCCvhlq1071wQAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+
+lazyScripts.push('//s95.cnzz.com/z_stat.php?id=1261686164&web_id=1261686164')
+
+</script>
+
+<script src="/js/main.min.js?v=1.5.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.5.2" async></script>
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+</body>
+</html>
