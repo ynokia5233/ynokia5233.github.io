@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    
+
+    
+
+    
+
+
+<!-- Baidu Push -->
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+<!-- End Baidu Push -->
+
+
+    <meta charset="utf-8">
+    
+    <meta name="google-site-verification" content="true">
+    <meta name="baidu-site-verification" content="97dbRVWfVh" />
+    <meta name="sogou_site_verification" content="AIePRXkUI4"/>
+    
+    
+    <link rel="canonical" href="http://www.kotlinandroid.net/2017/12/28/Ubuntu安装完之后所需要做的配置.html">
+    
+    
+    <title>Ubuntu安装完之后所需要做的配置 | ITGOYO技术站 | 一个专注发布技术相关与优秀文章的技术网站</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Linux">
+    <meta name="description" content="#字体推荐思源lantern可以设置全局代理 安装好了ubuntu之后，安装gnome主题安装Gnome之前，升级系统：12$ sudo apt update$ sudo apt upgrade 12sudo apt-get updatesudo apt-get install gnome-session-flashback 安装完之后使用classic主题登录（此时终端不可用ctrl+alt+t">
+<meta name="keywords" content="Linux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ubuntu安装完之后所需要做的配置">
+<meta property="og:url" content="https://github.com/itgoyo/2017/12/28/Ubuntu安装完之后所需要做的配置.html">
+<meta property="og:site_name" content="ITGOYO技术站">
+<meta property="og:description" content="#字体推荐思源lantern可以设置全局代理 安装好了ubuntu之后，安装gnome主题安装Gnome之前，升级系统：12$ sudo apt update$ sudo apt upgrade 12sudo apt-get updatesudo apt-get install gnome-session-flashback 安装完之后使用classic主题登录（此时终端不可用ctrl+alt+t">
+<meta property="og:image" content="https://github.com/assets/getqrcode.jpeg">
+<meta property="og:updated_time" content="2017-12-28T12:18:36.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Ubuntu安装完之后所需要做的配置">
+<meta name="twitter:description" content="#字体推荐思源lantern可以设置全局代理 安装好了ubuntu之后，安装gnome主题安装Gnome之前，升级系统：12$ sudo apt update$ sudo apt upgrade 12sudo apt-get updatesudo apt-get install gnome-session-flashback 安装完之后使用classic主题登录（此时终端不可用ctrl+alt+t">
+<meta name="twitter:image" content="https://github.com/assets/getqrcode.jpeg">
+    
+        <link rel="alternative" href="/atom.xml" title="ITGOYO技术站" type="application/atom+xml">
+    
+    <link rel="shortcut icon" href="/img/kotlin.png">
+    <link rel="stylesheet" href="/css/style.css?v=1.5.2">
+    <script>window.lazyScripts=[]</script>
+
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?c16d3c10c9ea6c6fe749d9926d52b0d6";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" style="
+    width: 300px;"class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand" style="
+          width: 300px;">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/kotlin_250x250.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">itgoyo</h5>
+          <a href="mailto:itgoyo@gmail.com" title="itgoyo@gmail.com" class="mail">itgoyo@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col" style="
+        width: 300px;">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                文章
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/books"  >
+                <i class="icon icon-lg icon-book"></i>
+                书籍
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/movies"  >
+                <i class="icon icon-lg icon-film"></i>
+                电影
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://www.kotlinandroid.net/album"  >
+                <i class="icon icon-lg icon-photo"></i>
+                相册
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="Mailto:itgoyo@kotlinandroid.net"  >
+                <i class="icon icon-lg icon-envelope"></i>
+                邮件
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://www.kotlinandroid.net/timeline"  >
+                <i class="icon icon-lg icon-calendar"></i>
+                时间轴
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/itgoyo"  >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://www.kotlinandroid.net/resume"  >
+                <i class="icon icon-lg icon-file-text"></i>
+                Résumé
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://hukai.me/android-training-course-in-chinese/index.html"  >
+                <i class="icon icon-lg icon-android"></i>
+                官方培训课程
+              </a>
+            </li>
+        
+
+      <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=300 height=270 src="https://music.163.com/outchain/player?type=0&id=120897804&auto=1&height=430"></iframe>
+
+        <div class="div_right_bottom" align="center">
+          <img src="/assets/getqrcode.jpeg">
+          微信公众号
+          </div>
+
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Ubuntu安装完之后所需要做的配置</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Ubuntu安装完之后所需要做的配置</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2017-12-28T12:18:16.000Z" itemprop="datePublished" class="page-time">
+  2017-12-28
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Linux/">Linux</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#安装好了ubuntu之后，安装gnome主题"><span class="post-toc-number">1.</span> <span class="post-toc-text">安装好了ubuntu之后，安装gnome主题</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Ubuntu-16-04-16-10安装KDE-Plasma"><span class="post-toc-number">2.</span> <span class="post-toc-text">Ubuntu 16.04/16.10安装KDE Plasma</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Ubuntu安装QQ"><span class="post-toc-number">3.</span> <span class="post-toc-text">Ubuntu安装QQ</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#QQ最小化叫唤不出来解决"><span class="post-toc-number">4.</span> <span class="post-toc-text">QQ最小化叫唤不出来解决</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Ubuntu安装Chrome"><span class="post-toc-number">5.</span> <span class="post-toc-text">Ubuntu安装Chrome</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#sudo-etc-sudoers-可被任何人写-解决方案"><span class="post-toc-number">6.</span> <span class="post-toc-text">sudo:/etc/sudoers 可被任何人写 解决方案</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#git-push时提示：更新被拒绝，因为您当前分支的最新提交落后于其对应的远程分支"><span class="post-toc-number">7.</span> <span class="post-toc-text">git push时提示：更新被拒绝，因为您当前分支的最新提交落后于其对应的远程分支</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#md模板"><span class="post-toc-number">8.</span> <span class="post-toc-text">.md模板</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#AndroidStudio配置"><span class="post-toc-number">9.</span> <span class="post-toc-text">AndroidStudio配置</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#安装OBS推流软件"><span class="post-toc-number">10.</span> <span class="post-toc-text">安装OBS推流软件</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#ftp上传文件"><span class="post-toc-number">11.</span> <span class="post-toc-text">ftp上传文件</span></a></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-Ubuntu安装完之后所需要做的配置"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Ubuntu安装完之后所需要做的配置</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2017-12-28 20:18:16" datetime="2017-12-28T12:18:16.000Z"  itemprop="datePublished">2017-12-28</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Linux/">Linux</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>#字体推荐思源<br>lantern可以设置全局代理</p>
+<h4 id="安装好了ubuntu之后，安装gnome主题"><a href="#安装好了ubuntu之后，安装gnome主题" class="headerlink" title="安装好了ubuntu之后，安装gnome主题"></a>安装好了ubuntu之后，安装gnome主题</h4><p>安装Gnome之前，升级系统：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ sudo apt update</div><div class="line">$ sudo apt upgrade</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo apt-get update</div><div class="line">sudo apt-get install gnome-session-flashback</div></pre></td></tr></table></figure>
+<p>安装完之后使用classic主题登录（此时终端不可用ctrl+alt+t）</p>
+<h4 id="Ubuntu-16-04-16-10安装KDE-Plasma"><a href="#Ubuntu-16-04-16-10安装KDE-Plasma" class="headerlink" title="Ubuntu 16.04/16.10安装KDE Plasma"></a>Ubuntu 16.04/16.10安装KDE Plasma</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ sudo add-apt-repository ppa:kubuntu-ppa/backports  # Ubuntu 16.04</div><div class="line"># 如果使用16.10，不用添加第三方源</div><div class="line">$ sudo apt update</div><div class="line">$ sudo apt upgrade</div><div class="line">$ sudo apt install kubuntu-desktop</div></pre></td></tr></table></figure>
+<ul>
+<li>lightdm：Unity桌面默认的Display Manager</li>
+<li>ssdm：KDE桌面更倾向于使用ssdm（选这个）<br>最后安装登录系统没反应，只有一个下划线，然后在登录时ctrl+alt+F3进入终端模式<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get remove kubuntu-xxxx</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>然后登录的时候就可以使用gnome登录，此时终端可使用快捷键唤出</p>
+<h4 id="Ubuntu安装QQ"><a href="#Ubuntu安装QQ" class="headerlink" title="Ubuntu安装QQ"></a>Ubuntu安装QQ</h4><p>crossover安装与破解</p>
+<p>在官网下载crossover安装包：</p>
+<p><a href="https://www.codeweavers.com/products/crossover-linux" target="_blank" rel="external">https://www.codeweavers.com/products/crossover-linux</a></p>
+<p>等待安装完毕，安装完成后先不要打开crossover，下载破解文件：</p>
+<p><a href="https://pan.baidu.com/s/1slTLv8T" target="_blank" rel="external">https://pan.baidu.com/s/1slTLv8T</a></p>
+<p>在命令行输入sudo nautilus打开一个root权限的文件管理器</p>
+<p>把破解文件 (crossover16crack-&gt;winewrapper.exe.so) 替换路径: /opt/cxoffice/lib/wine下的winewrapper.exe.so文件。提示已有文件，点“替换”破解完成。</p>
+<p>安装Deepin QQ 7.9 轻聊版</p>
+<p>下载安装包：</p>
+<p><a href="https://pan.baidu.com/s/1gfl00ZT" target="_blank" rel="external">https://pan.baidu.com/s/1gfl00ZT</a></p>
+<p>下载之后用归档管理器打开</p>
+<p>点开 data.tar.xz 找到 ./opt/cxoffice/support<br>把 apps.com.qq.im.light 这个文件夹提取出来</p>
+<p>在命令行输入sudo nautilus打开一个root权限的文件管理器</p>
+<p>然后将这个文件夹复制到系统的 /opt/cxoffice/support 下</p>
+<h4 id="QQ最小化叫唤不出来解决"><a href="#QQ最小化叫唤不出来解决" class="headerlink" title="QQ最小化叫唤不出来解决"></a>QQ最小化叫唤不出来解决</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo apt-add-repository ppa:fixnix/indicator-systemtray-unity</div><div class="line">sudo apt-get update</div><div class="line">sudo apt-get install indicator-systemtray-unity</div></pre></td></tr></table></figure>
+<p>或者是使用gnome主题</p>
+<p>win+alt 鼠标右键状态栏  add to panel 增加消息通知事件即可</p>
+<h4 id="Ubuntu安装Chrome"><a href="#Ubuntu安装Chrome" class="headerlink" title="Ubuntu安装Chrome"></a>Ubuntu安装Chrome</h4><p>2.在终端中，输入以下命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">sudo wget http://www.linuxidc.com/files/repo/google-chrome.list -P /etc/apt/sources.list.d/</div><div class="line"></div><div class="line">wget -q -O - https://dl.google.com/linux/linux_signing_key.pub  | sudo apt-key add -</div><div class="line"></div><div class="line">sudo apt-get update</div><div class="line"></div><div class="line">sudo apt-get install google-chrome-stable</div></pre></td></tr></table></figure></p>
+<h4 id="sudo-etc-sudoers-可被任何人写-解决方案"><a href="#sudo-etc-sudoers-可被任何人写-解决方案" class="headerlink" title="sudo:/etc/sudoers 可被任何人写 解决方案"></a>sudo:/etc/sudoers 可被任何人写 解决方案</h4><p>解决方式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudoers的权限被改了，改回来就好了。</div><div class="line"></div><div class="line">pkexec chmod 0440 /etc/sudoers</div></pre></td></tr></table></figure>
+<h4 id="git-push时提示：更新被拒绝，因为您当前分支的最新提交落后于其对应的远程分支"><a href="#git-push时提示：更新被拒绝，因为您当前分支的最新提交落后于其对应的远程分支" class="headerlink" title="git push时提示：更新被拒绝，因为您当前分支的最新提交落后于其对应的远程分支"></a>git push时提示：更新被拒绝，因为您当前分支的最新提交落后于其对应的远程分支</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">git remote add origin https://github.com/username/test.git    </div><div class="line">$git fetch origin  </div><div class="line">$git merge origin/master</div></pre></td></tr></table></figure>
+<h4 id="md模板"><a href="#md模板" class="headerlink" title=".md模板"></a>.md模板</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">title: &quot;[译]Kotlin 1.1 候选版本来啦&quot;</div><div class="line">date: 2017-02-17 13:37:00</div><div class="line">author: Mikhail Glukhikh</div><div class="line">tags:</div><div class="line">keywords:</div><div class="line">categories: 官方动态</div><div class="line">reward: false</div><div class="line">reward_title: Have a nice Kotlin!</div><div class="line">reward_wechat:</div><div class="line">reward_alipay:</div><div class="line">source_url: https://blog.jetbrains.com/kotlin/2017/02/kotlin-1-1-release-candidate-is-here/</div><div class="line">translator: ahong222</div><div class="line">translator_url: https://github.com/ahong222</div></pre></td></tr></table></figure>
+<p>tar<br>解包：tar xvf FileName.tar<br>打包：tar cvf FileName.tar DirName</p>
+<p>.gz<br>解压1：gunzip FileName.gz<br>解压2：gzip -d FileName.gz<br>压缩：gzip FileName<br>.tar.gz<br>解压：tar zxvf FileName.tar.gz<br>压缩：tar zcvf FileName.tar.gz DirName</p>
+<p>.bz2<br>解压1：bzip2 -d FileName.bz2<br>解压2：bunzip2 FileName.bz2<br>压缩： bzip2 -z FileName<br>.tar.bz2<br>解压：tar jxvf FileName.tar.bz2<br>压缩：tar jcvf FileName.tar.bz2 DirName</p>
+<p>.bz<br>解压1：bzip2 -d FileName.bz<br>解压2：bunzip2 FileName.bz</p>
+<p>.tar.bz<br>解压：tar jxvf FileName.tar.bz</p>
+<p>.Z<br>解压：uncompress FileName.Z<br>压缩：compress FileName</p>
+<p>.tar.Z<br>解压：tar Zxvf FileName.tar.Z<br>压缩：tar Zcvf FileName.tar.Z DirName</p>
+<p>.tgz<br>解压：tar zxvf FileName.tgz</p>
+<p>.tar.tgz<br>解压：tar zxvf FileName.tar.tgz<br>压缩：tar zcvf FileName.tar.tgz FileName</p>
+<p>.zip<br>解压：unzip FileName.zip<br>压缩：zip FileName.zip DirName</p>
+<p>.rar<br>解压：rar a FileName.rar<br>压缩：rar e FileName.rar</p>
+<p>.lha<br>解压：lha -e FileName.lha<br>压缩：lha -a FileName.lha FileName</p>
+<h4 id="AndroidStudio配置"><a href="#AndroidStudio配置" class="headerlink" title="AndroidStudio配置"></a>AndroidStudio配置</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">Edit /etc/apt/sources.list file and add one of following line :</div><div class="line"></div><div class="line">deb http://download.virtualbox.org/virtualbox/debian trusty contrib</div><div class="line">Save and exit</div><div class="line"></div><div class="line">update using :sudo apt-get update</div><div class="line"></div><div class="line">According to virtualbox_wiki you need to Install dkms</div><div class="line"></div><div class="line">sudo apt-get install dkms</div><div class="line">Setup oracle public key:</div><div class="line"></div><div class="line">wget http://download.virtualbox.org/virtualbox/debian/oracle_vbox.asc</div><div class="line">sudo apt-key add oracle_vbox.asc</div><div class="line">Install Oracle VirtualBox</div><div class="line"></div><div class="line">sudo apt-get update</div><div class="line">sudo apt-get install virtualbox-5.0</div></pre></td></tr></table></figure>
+<h4 id="安装OBS推流软件"><a href="#安装OBS推流软件" class="headerlink" title="安装OBS推流软件"></a>安装OBS推流软件</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install ffmpeg</div><div class="line"></div><div class="line">sudo add-apt-repository ppa:obsproject/obs-studio</div><div class="line">sudo apt-get update &amp;&amp; sudo apt-get install obs-studio</div></pre></td></tr></table></figure>
+<h4 id="ftp上传文件"><a href="#ftp上传文件" class="headerlink" title="ftp上传文件"></a>ftp上传文件</h4><p>使用<a href="https://filezilla-project.org/" target="_blank" rel="external">Filezillia</a></p>
+<p>注意！！！</p>
+<p>上传文件的时候默认是不支持中文的，要自己在站点设置里边强制使用UTF-8字符集</p>
+<hr>
+<div align="center"><br><br>发现更多有趣好玩的，欢迎关注我的微信公众号<br><br><img src="/assets/getqrcode.jpeg" alt=""><br></div>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    最後更新時間：<time datetime="2017-12-28T12:18:36.000Z" itemprop="dateUpdated">2017-12-28 20:18:36</time>
+</span><br>
+
+
+        
+    </div>
+    <footer>
+        <a href="https://github.com/itgoyo">
+            <img src="/img/kotlin_250x250.jpg" alt="itgoyo">
+            itgoyo
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://github.com/itgoyo/2017/12/28/Ubuntu安装完之后所需要做的配置.html&title=《Ubuntu安装完之后所需要做的配置》 — ITGOYO技术站&pic=https://github.com/itgoyo/img/kotlin_250x250.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://github.com/itgoyo/2017/12/28/Ubuntu安装完之后所需要做的配置.html&title=《Ubuntu安装完之后所需要做的配置》 — ITGOYO技术站&source=talk is cheap,show me the girl." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://github.com/itgoyo/2017/12/28/Ubuntu安装完之后所需要做的配置.html" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ubuntu安装完之后所需要做的配置》 — ITGOYO技术站&url=https://github.com/itgoyo/2017/12/28/Ubuntu安装完之后所需要做的配置.html&via=https://github.com/itgoyo" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://github.com/itgoyo/2017/12/28/Ubuntu安装完之后所需要做的配置.html" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2019/12/28/在Github上使用Hexo搭建个人博客.html" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">在Github上使用Hexo搭建个人博客</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2017/12/25/猎场中出现过的书籍及其含义.html" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">猎场中出现过的书籍及其含义</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+<section class="comments" id="comments">
+    <div id="disqus_thread"></div>
+    <script>
+    var disqus_shortname = 'itgoyo';
+    lazyScripts.push('//' + disqus_shortname + '.disqus.com/embed.js')
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitment_thread"></div>
+    <link rel="stylesheet" href="//unpkg.com/gitment/style/default.css">
+    <!-- <script src="//unpkg.com/gitment/dist/gitment.browser.js"></script> -->
+    <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+    <script>
+        var gitment = new Gitment({
+            owner: 'itgoyo',
+            repo: 'itgoyo.github.io',
+            oauth: {
+                client_id: '464e7c112346fd6daabb',
+                client_secret: '3f78aa47b168a9788b888238a610dff1ac6e51ac',
+            },
+        })
+        gitment.render('comments')
+    </script>
+</section>
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        奖励一杯咖啡!
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/assets/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/assets/img/wechat.jpg" data-alipay="/assets/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+
+    <div class="bottom">
+  
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            <span>itgoyo &copy; 2017</span>  &nbsp&nbsp&nbsp 作者Github地址 欢迎关注 <a href="https://github.com/itgoyo" target="_blank">itgoyo</a>
+              <a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a>
+        </p>
+        <p>
+        感谢西部数码提供<a href="http://www.west.cn/index.asp?ReferenceID=1232730"
+        target="_blank">虚拟主机</a>
+        </p>
+        <p>
+            <span>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://github.com/itgoyo/2017/12/28/Ubuntu安装完之后所需要做的配置.html&title=《Ubuntu安装完之后所需要做的配置》 — ITGOYO技术站&pic=https://github.com/itgoyo/img/kotlin_250x250.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://github.com/itgoyo/2017/12/28/Ubuntu安装完之后所需要做的配置.html&title=《Ubuntu安装完之后所需要做的配置》 — ITGOYO技术站&source=talk is cheap,show me the girl." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://github.com/itgoyo/2017/12/28/Ubuntu安装完之后所需要做的配置.html" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ubuntu安装完之后所需要做的配置》 — ITGOYO技术站&url=https://github.com/itgoyo/2017/12/28/Ubuntu安装完之后所需要做的配置.html&via=https://github.com/itgoyo" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://github.com/itgoyo/2017/12/28/Ubuntu安装完之后所需要做的配置.html" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACqElEQVR42u3awW7rMAwEwP7/T/ediz6nu6QUtMD4FCSxpPFBokl+fMTX57cr+fX7P5/uehonH2114eHh4a2Xnkyc3/u0uNfftOt5mhcPDw/vHu9pR20/J9epuV6Pg4eHh/dXeE/hcnIU5aE8Hh4e3t/lvf4mWdwsGYGHh4f3G3jt0EmqYpYI3iR88fDw8N7Dy6tIv+fzlfoeHh4e3rqqvm8IaI+WzWHwn3nx8PDwLvDyDbdtL2gX3c6VN3Lh4eHh3eC1ydxTrVF5k1ab0sXDw8O7xzv7hGbB92yjjxITeHh4eBd4+0J+zm4TGZsR8PDw8N7DmxX+Z00AyePLH9kPbDw8PLyjvHwR+Ua82dzbtqqovoeHh4d3lJekJGYT51t/26zQHl14eHh4N3gbWJtQyIte+xnx8PDw7vHyREOebkiQm3RGHvTj4eHhneW1KdR9W0B0Ri0Svl/uxcPDw7vMy7f1TVC+Sfi2q8XDw8O7x8uTCG1dvl1i9AaQh9d4eHh4F3h5UJunCfLQeRbKnwrZ8fDw8Ga8U81P7fM722rw+D0eHh7e23mbMlU+Zvv48rQvHh4e3g1efhjkiYZNMeziWwIeHh7eIV67rbdFslN9Ya+PjR+arvDw8PCO8mal+vafs1D4WPsCHh4e3tt5+2C3Ha3FFKcfHh4e3gVeUmqa4fOmrk37bJGSwMPDw1vz2raApPE0L3S1KeDiwsPDwzvK+yyv2bExK5VFbVVJZwQeHh7eUd5sjz273FnjwgqDh4eHt+Ylh8EmUJ7hZ4mJIhmBh4eHt+Ztyldto1UeOrfNB3UBDA8PD+8tvFmInB8AyQqLEfDw8PB+AS8PoNu0wqaQdvjcw8PDwzuU55xt37PUxqa5AQ8PD+82b//Cv08Et4trg3I8PDy8Q7x/4TJ9gkeq1O8AAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+
+lazyScripts.push('//s95.cnzz.com/z_stat.php?id=1261686164&web_id=1261686164')
+
+</script>
+
+<script src="/js/main.min.js?v=1.5.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.5.2" async></script>
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+</body>
+</html>

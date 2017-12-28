@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    
+
+    
+
+    
+
+
+<!-- Baidu Push -->
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+<!-- End Baidu Push -->
+
+
+    <meta charset="utf-8">
+    
+    <meta name="google-site-verification" content="true">
+    <meta name="baidu-site-verification" content="97dbRVWfVh" />
+    <meta name="sogou_site_verification" content="AIePRXkUI4"/>
+    
+    
+    <link rel="canonical" href="http://www.kotlinandroid.net/2019/12/28/在Github上使用Hexo搭建个人博客.html">
+    
+    
+    <title>在Github上使用Hexo搭建个人博客 | ITGOYO技术站 | 一个专注发布技术相关与优秀文章的技术网站</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Program">
+    <meta name="description" content="成品示例展示：https://itgoyo.github.io/  1、Hexo搭建环境一、环境安装  node.js（在node.js官网中下载安装）node.js官网  git（OS系统中直接安装x-code就可以了）  hexo   1）打开OS系统终端 2）输入安装hexo的代码(此处安装时有可能会提示输入系统管理员密码) $ sudo npm install -g hexo 如果以上命令">
+<meta name="keywords" content="Program">
+<meta property="og:type" content="article">
+<meta property="og:title" content="在Github上使用Hexo搭建个人博客">
+<meta property="og:url" content="https://github.com/itgoyo/2019/12/28/在Github上使用Hexo搭建个人博客.html">
+<meta property="og:site_name" content="ITGOYO技术站">
+<meta property="og:description" content="成品示例展示：https://itgoyo.github.io/  1、Hexo搭建环境一、环境安装  node.js（在node.js官网中下载安装）node.js官网  git（OS系统中直接安装x-code就可以了）  hexo   1）打开OS系统终端 2）输入安装hexo的代码(此处安装时有可能会提示输入系统管理员密码) $ sudo npm install -g hexo 如果以上命令">
+<meta property="og:image" content="http://omvbl46i3.bkt.clouddn.com/17-5-28/97759013.jpg">
+<meta property="og:image" content="http://omvbl46i3.bkt.clouddn.com/17-5-28/63843029.jpg">
+<meta property="og:image" content="http://i1.piimg.com/567571/00cde6a244040948.png">
+<meta property="og:image" content="http://i1.piimg.com/567571/4ba2e03b531f5c92.png">
+<meta property="og:image" content="https://itgoyo.github.io/pictures/2017_1_10/yunmusic.png">
+<meta property="og:image" content="https://itgoyo.github.io/pictures/2017_1_10/yunmusiclist.png">
+<meta property="og:image" content="https://itgoyo.github.io/pictures/2017_1_10/yunmusicurl.png">
+<meta property="og:image" content="https://itgoyo.github.io/pictures/2017_1_10/yunmusicplayer.png">
+<meta property="og:image" content="https://itgoyo.github.io/pictures/2017_1_10/playerlocation.png">
+<meta property="og:image" content="https://itgoyo.github.io/pictures/2017_1_10/style.png">
+<meta property="og:image" content="http://p1.bpimg.com/567571/9f8f989f3648840a.png">
+<meta property="og:image" content="http://omvbl46i3.bkt.clouddn.com/17-5-29/76939269.jpg">
+<meta property="og:image" content="https://github.com/assets/getqrcode.jpeg">
+<meta property="og:updated_time" content="2017-12-28T12:15:24.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="在Github上使用Hexo搭建个人博客">
+<meta name="twitter:description" content="成品示例展示：https://itgoyo.github.io/  1、Hexo搭建环境一、环境安装  node.js（在node.js官网中下载安装）node.js官网  git（OS系统中直接安装x-code就可以了）  hexo   1）打开OS系统终端 2）输入安装hexo的代码(此处安装时有可能会提示输入系统管理员密码) $ sudo npm install -g hexo 如果以上命令">
+<meta name="twitter:image" content="http://omvbl46i3.bkt.clouddn.com/17-5-28/97759013.jpg">
+    
+        <link rel="alternative" href="/atom.xml" title="ITGOYO技术站" type="application/atom+xml">
+    
+    <link rel="shortcut icon" href="/img/kotlin.png">
+    <link rel="stylesheet" href="/css/style.css?v=1.5.2">
+    <script>window.lazyScripts=[]</script>
+
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?c16d3c10c9ea6c6fe749d9926d52b0d6";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" style="
+    width: 300px;"class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand" style="
+          width: 300px;">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/kotlin_250x250.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">itgoyo</h5>
+          <a href="mailto:itgoyo@gmail.com" title="itgoyo@gmail.com" class="mail">itgoyo@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col" style="
+        width: 300px;">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                文章
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/books"  >
+                <i class="icon icon-lg icon-book"></i>
+                书籍
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/movies"  >
+                <i class="icon icon-lg icon-film"></i>
+                电影
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://www.kotlinandroid.net/album"  >
+                <i class="icon icon-lg icon-photo"></i>
+                相册
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="Mailto:itgoyo@kotlinandroid.net"  >
+                <i class="icon icon-lg icon-envelope"></i>
+                邮件
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://www.kotlinandroid.net/timeline"  >
+                <i class="icon icon-lg icon-calendar"></i>
+                时间轴
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/itgoyo"  >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://www.kotlinandroid.net/resume"  >
+                <i class="icon icon-lg icon-file-text"></i>
+                Résumé
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://hukai.me/android-training-course-in-chinese/index.html"  >
+                <i class="icon icon-lg icon-android"></i>
+                官方培训课程
+              </a>
+            </li>
+        
+
+      <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=300 height=270 src="https://music.163.com/outchain/player?type=0&id=120897804&auto=1&height=430"></iframe>
+
+        <div class="div_right_bottom" align="center">
+          <img src="/assets/getqrcode.jpeg">
+          微信公众号
+          </div>
+
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">在Github上使用Hexo搭建个人博客</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">在Github上使用Hexo搭建个人博客</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-12-28T12:14:25.000Z" itemprop="datePublished" class="page-time">
+  2019-12-28
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/编程相关/">编程相关</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1、Hexo搭建"><span class="post-toc-number">1.</span> <span class="post-toc-text">1、Hexo搭建</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#环境"><span class="post-toc-number">1.0.1.</span> <span class="post-toc-text">环境</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2、Hexo加入评论功能"><span class="post-toc-number">2.</span> <span class="post-toc-text">2、Hexo加入评论功能</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Yilia主题（别的主题也是一样的操作）"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">Yilia主题（别的主题也是一样的操作）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Yilia添加Disqus评论"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">Yilia添加Disqus评论</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2、Hexo加入网易云音乐"><span class="post-toc-number">3.</span> <span class="post-toc-text">2、Hexo加入网易云音乐</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Yilia主题（我使用的是这个主题就用这个来讲）"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">Yilia主题（我使用的是这个主题就用这个来讲）</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3、Hexo加入百度统计"><span class="post-toc-number">4.</span> <span class="post-toc-text">3、Hexo加入百度统计</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#yilia主题为🌰"><span class="post-toc-number">5.</span> <span class="post-toc-text">yilia主题为🌰</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#重新生产部署站点即可。"><span class="post-toc-number">6.</span> <span class="post-toc-text"> 重新生产部署站点即可。</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Ubuntu下"><span class="post-toc-number">6.1.</span> <span class="post-toc-text">Ubuntu下</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-在Github上使用Hexo搭建个人博客"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">在Github上使用Hexo搭建个人博客</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-12-28 20:14:25" datetime="2019-12-28T12:14:25.000Z"  itemprop="datePublished">2019-12-28</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/编程相关/">编程相关</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>成品示例展示：<a href="https://itgoyo.github.io/" target="_blank" rel="external">https://itgoyo.github.io/</a></p>
+<p><img src="http://omvbl46i3.bkt.clouddn.com/17-5-28/97759013.jpg" alt=""></p>
+<h2 id="1、Hexo搭建"><a href="#1、Hexo搭建" class="headerlink" title="1、Hexo搭建"></a>1、Hexo搭建</h2><h4 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h4><p>一、环境安装</p>
+<ol>
+<li><p>node.js（在node.js官网中下载安装）node.js官网</p>
+</li>
+<li><p>git（OS系统中直接安装x-code就可以了）</p>
+</li>
+<li><p>hexo</p>
+</li>
+</ol>
+<p>1）打开OS系统终端</p>
+<p>2）输入安装hexo的代码(此处安装时有可能会提示输入系统管理员密码)</p>
+<p>$ sudo npm install -g hexo</p>
+<p>如果以上命令安装失败的话，换</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo npm install --unsafe-perm --verbose -g hexo</div></pre></td></tr></table></figure>
+<p>二、hexo创建静态博客</p>
+<ol>
+<li><p>新建blog文件夹</p>
+</li>
+<li><p>在终端进入该文件夹，初始化博客</p>
+</li>
+</ol>
+<p>$ hexo init</p>
+<ol>
+<li>上述完成后，生成原始文件；blog文件夹就是博客的根目录</li>
+</ol>
+<ol>
+<li>本地查看：启用本地服务命令(退出按ctrl+c)</li>
+</ol>
+<p>$ hexo s</p>
+<ol>
+<li>将出现的地址输入浏览器，即可可查看到本地效果</li>
+</ol>
+<p>三、github配置</p>
+<ol>
+<li><p>注册github账号并登陆</p>
+</li>
+<li><p>获取本机的SSH口令</p>
+</li>
+</ol>
+<p>1）输入获取代码，回车直到出现图片所示图形为止</p>
+<p>$ ssh-keygen</p>
+<p>2）输入编译代码</p>
+<p>$ vim ~/.ssh/id_rsa.pub<br>3）出现SSH口令后，将红框部分复制，并在下方输入:q，随后按下回车可以退出该窗口</p>
+<p>4）进入到github页面设置SSH口令</p>
+<p>点击用户下拉菜单中的settings（step1)</p>
+<p>点击左侧的SHH and GPG keys（step2)</p>
+<p>在Title中输入口令名称（随意）（step3)</p>
+<p>在key中贴上SSH口令（step4)</p>
+<a id="more"></a>
+<ol>
+<li>创建新的仓库</li>
+</ol>
+<p>1）创建新的仓库（repOSitory）</p>
+<p>点击用户左侧的+号菜单中的New repOSitory（step1)</p>
+<p>在repOSitory name中输入二级域名，格式请严格遵照username.github.io（step2)</p>
+<p>ps：username填写github的登录用户名，否则上线的时候会报错</p>
+<p>是否公开选项可以选取Public（step3)</p>
+<p>勾选step4处，会自动生成一份可编辑的README.md文件（建议勾选）（step4)</p>
+<p>点击create repOSitory生成仓库完毕（step5)</p>
+<p>2）查看新建的仓库（repOSitory）</p>
+<p>可以回到github个人首页点击右侧的仓库区</p>
+<p>进入后在step1处选择并复制http地址，注意此时step2处应该是空的</p>
+<p>四、发布博客</p>
+<ol>
+<li>设置blog配置文件</li>
+</ol>
+<p>1）打开blog文件夹下的_config.yml文件</p>
+<p>2）找到最下方的type，输入git（注意冒号后面是带空格的）</p>
+<p>3）repo行可能没有，需要自己输入，后面跟上github上仓库中复制的http地址（注意此时1、2两处应该是一样的username），不然上传时会报错</p>
+<p>4）其他博客设置</p>
+<p>title：博客名称</p>
+<p>subtitle：博客副标题</p>
+<p>description：博客描述</p>
+<p>author：作者</p>
+<p>language：语言（简体中文是zh-CN）</p>
+<ol>
+<li>在终端上传博客</li>
+</ol>
+<p>1）进入终端，输入git上传插件安装代码（安装时会提示输入github用户名及密码）</p>
+<p>  $ npm install hexo-deployer-git –save<br>2）安装完毕后，输入获取代码</p>
+<p>  $ hexo g<br>3）最后输入上传代码</p>
+<p>  $ hexo d<br>4）重新在github仓库查看上传文件，此时在step2中会有之前bolg中生成的文件</p>
+<p>5）step3处就是你的博客地址</p>
+<p>五、新建与更新博客</p>
+<ol>
+<li>新建博客</li>
+</ol>
+<p>1）终端bolg文件下，输入新建博客代码</p>
+<pre><code>$ hexo new &apos;filename&apos;
+</code></pre><p>2）此时在bolg/source/_posts/下面会看到新建的博客</p>
+<p>3）博客文件的后缀是.md文件，OS下推荐使用MOU编辑器mou下载地址</p>
+<ol>
+<li>更新博客</li>
+</ol>
+<p>1）完成编辑后，在终端上依次重复以下代码（此时必须先将编辑器关闭，否则会出现获取错误）</p>
+<pre><code>$ hexo g
+$ hexo d
+</code></pre><p>2）完成后便能刷新博客网页看到新更新的内容了</p>
+<h2 id="2、Hexo加入评论功能"><a href="#2、Hexo加入评论功能" class="headerlink" title="2、Hexo加入评论功能"></a>2、Hexo加入评论功能</h2><h3 id="Yilia主题（别的主题也是一样的操作）"><a href="#Yilia主题（别的主题也是一样的操作）" class="headerlink" title="Yilia主题（别的主题也是一样的操作）"></a>Yilia主题（别的主题也是一样的操作）</h3><p>首先，我们要有一个多说的账号<a href="http://music.163.com/" target="_blank" rel="external">多说</a>(2017-6-1废弃)</p>
+<p>然后进入到后台把我们的网站填写进去</p>
+<p><img src="http://omvbl46i3.bkt.clouddn.com/17-5-28/63843029.jpg" alt=""></p>
+<p>在<code>theme/yilia/layout/_partial/post/</code>目录下创建文件名叫：duoshuo.ejs<br>把以下代码复制进去</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"duoshuo"</span>&gt;</div><div class="line">    &lt;!-- 多说评论框 start --&gt;</div><div class="line">    &lt;div class="ds-thread" data-thread-key="&lt;%=key%&gt;" data-title="&lt;%=title%&gt;" data-url="&lt;%=url%&gt;"&gt;&lt;/div&gt;</div><div class="line">    &lt;!-- 多说评论框 end --&gt;</div><div class="line">    &lt;!-- 多说公共JS代码 start (一个网页只需插入一次) --&gt;</div><div class="line">    &lt;script type=<span class="string">"text/javascript"</span>&gt;</div><div class="line">    var duoshuoQuery = &#123;short_name:<span class="string">'&lt;%= config.duoshuo_shortname %&gt;'</span>&#125;;</div><div class="line">    (function() &#123;</div><div class="line">        var ds = document.createElement(<span class="string">'script'</span>);</div><div class="line">        ds.type = <span class="string">'text/javascript'</span>;ds.async = <span class="keyword">true</span>;</div><div class="line">        ds.src = (document.location.protocol == <span class="string">'https:'</span> ? <span class="string">'https:'</span> : <span class="string">'http:'</span>) + <span class="string">'//static.duoshuo.com/embed.js'</span>;</div><div class="line">        ds.charset = <span class="string">'UTF-8'</span>;</div><div class="line">        (document.getElementsByTagName(<span class="string">'head'</span>)[<span class="number">0</span>]</div><div class="line">         || document.getElementsByTagName(<span class="string">'body'</span>)[<span class="number">0</span>]).appendChild(ds);</div><div class="line">    &#125;)();</div><div class="line">    &lt;/script&gt;</div><div class="line">    &lt;!-- 多说公共JS代码 end --&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
+<p>在<code>hexo/_comfig.yml</code>里边添加一下代码（名字换成自己的）</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">duoshuo_shortname: xxxx(冒号后有空格)</div></pre></td></tr></table></figure>
+<p>最后在<code>theme/yilia/_config.yml</code>  里边添加以下代码（名字换成自己的）</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">duoshuo: <span class="keyword">true</span></div><div class="line">short_name: xxxx  #名字换你自己在多说后台的名字(冒号后有空格)</div></pre></td></tr></table></figure>
+<p><strong>一共配置两处地方</strong><br>不然即便是看到评论功能，但是不会保留别人对你的评论</p>
+<p>然后重新提交代码刷新即可看到评论功能</p>
+<p><img src="http://i1.piimg.com/567571/00cde6a244040948.png" alt=""></p>
+<hr>
+<h3 id="Yilia添加Disqus评论"><a href="#Yilia添加Disqus评论" class="headerlink" title="Yilia添加Disqus评论"></a>Yilia添加Disqus评论</h3><p>只需要在Yilia主题里边的_config.yml添加一句</p>
+<p>disqus_shortname: 你的Disqus账户名称</p>
+<p><img src="http://i1.piimg.com/567571/4ba2e03b531f5c92.png" alt=""></p>
+<h2 id="2、Hexo加入网易云音乐"><a href="#2、Hexo加入网易云音乐" class="headerlink" title="2、Hexo加入网易云音乐"></a>2、Hexo加入网易云音乐</h2><h3 id="Yilia主题（我使用的是这个主题就用这个来讲）"><a href="#Yilia主题（我使用的是这个主题就用这个来讲）" class="headerlink" title="Yilia主题（我使用的是这个主题就用这个来讲）"></a>Yilia主题（我使用的是这个主题就用这个来讲）</h3><p>进入网易云音乐: <a href="http://music.163.com/" target="_blank" rel="external">官网</a></p>
+<p>推荐：自己注册账号，这样子可以创建自己喜欢的歌单，在里边收藏自己喜欢的歌曲</p>
+<p><img src="https://itgoyo.github.io/pictures/2017_1_10/yunmusic.png" alt=""></p>
+<p>然后进入到自己的歌单</p>
+<p><img src="https://itgoyo.github.io/pictures/2017_1_10/yunmusiclist.png" alt=""></p>
+<p>点击生成外链，获取到云音乐播放器代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;iframe frameborder=&quot;no&quot; border=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=300 height=270 src=&quot;https://music.163.com/outchain/player?type=0&amp;id=120897804&amp;auto=1&amp;height=430&quot;&gt;&lt;/iframe&gt;</div></pre></td></tr></table></figure>
+<p><img src="https://itgoyo.github.io/pictures/2017_1_10/yunmusicurl.png" alt=""></p>
+<p>选择生成自己喜欢的样式，然后复制代码</p>
+<p><img src="https://itgoyo.github.io/pictures/2017_1_10/yunmusicplayer.png" alt=""></p>
+<p>最后打开（themes/yilia/layout/_partial/left-col.ejs）<br>把复制好的网易云音乐放到第二行里边(当然这个是我的样式，我选择放在左边，你喜欢放在那里自己选择)</p>
+<p><img src="https://itgoyo.github.io/pictures/2017_1_10/playerlocation.png" alt=""></p>
+<p>最后的效果图如下</p>
+<p><img src="https://itgoyo.github.io/pictures/2017_1_10/style.png" alt=""></p>
+<hr>
+<h2 id="3、Hexo加入百度统计"><a href="#3、Hexo加入百度统计" class="headerlink" title="3、Hexo加入百度统计"></a>3、Hexo加入百度统计</h2><h2 id="yilia主题为🌰"><a href="#yilia主题为🌰" class="headerlink" title="yilia主题为🌰"></a>yilia主题为🌰</h2><p> <img src="http://p1.bpimg.com/567571/9f8f989f3648840a.png" alt=""><br> 编辑文件 themes/yilia/_config.yml ,添加一行配置，可以删除原来的google analytics</p>
+ <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">baidu_tongji: <span class="keyword">true</span></div></pre></td></tr></table></figure>
+ <!--more-->
+<p> 新建 themes/yilia/layout/_partial/baidu_tongji.ejs 内容如下</p>
+ <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;% <span class="keyword">if</span> (theme.baidu_tongji) &#123; %&gt;</div><div class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</div><div class="line">#申请的百度统计代码</div><div class="line">&lt;/script&gt;</div><div class="line">&lt;% &#125; %&gt;</div></pre></td></tr></table></figure>
+<p> 编辑themes/yilia/layout/_partial/head.ejs 在  前添加</p>
+ <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;%- partial(<span class="string">"baidu_tongji"</span>) %&gt;</div></pre></td></tr></table></figure>
+<p> 重新生产部署站点即可。<br> Light主题<br> 编辑文件 themes/yilia/_config.yml ,添加一行配置，可以删除原来的google analytics</p>
+ <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">baidu_tongji: <span class="keyword">true</span>`</div></pre></td></tr></table></figure>
+<p> 新建 themes/light/layout/_partial/baidu_tongji.ejs 内容如下</p>
+ <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">%</span> <span class="attr">if</span> (<span class="attr">theme.baidu_tongji</span>) &#123; %&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="undefined">#申请的百度统计代码</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">%</span> &#125; %&gt;</span></div></pre></td></tr></table></figure>
+<p> 编辑themes/Yilia/layout/_partial/head.ejs 在  前添加</p>
+ <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;%- partial(<span class="string">"baidu_tongji"</span>) %&gt;`</div></pre></td></tr></table></figure>
+<h2 id="重新生产部署站点即可。"><a href="#重新生产部署站点即可。" class="headerlink" title=" 重新生产部署站点即可。"></a> 重新生产部署站点即可。</h2><p>最后多说一句，因为文章是采用Markdown格式编辑的，所以不免会使用到图片的时候，这个时候如果是在跟目录下创建图片文件，这样子搬迁或者复制什么的会很不便，在此我想向大家推荐一个免费的图床<br><a href="https://jiantuku.com" target="_blank" rel="external">极简图床</a><br>只要复制图片粘贴到极简图床，它会自动生成Markdown格式的图片地址</p>
+<p><img src="http://omvbl46i3.bkt.clouddn.com/17-5-29/76939269.jpg" alt=""></p>
+<p>最好申请一个七牛云，这样子就可以创建自己的私密空间。</p>
+<h3 id="Ubuntu下"><a href="#Ubuntu下" class="headerlink" title="Ubuntu下"></a>Ubuntu下</h3><p>首先安装nodejs<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">sudo apt-get nodejs</div><div class="line"></div><div class="line">sudo npm cache clean -f</div><div class="line">sudo npm install -g n</div><div class="line">sudo n stable</div><div class="line"></div><div class="line">出现了相应的版本号了之后</div><div class="line">sudo n xxx</div></pre></td></tr></table></figure></p>
+<p>提交到Girhub还要安装一个git插件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">npm install hexo-deployer-git --save</div><div class="line"></div><div class="line">之前一直报错，然后手贱敲错</div><div class="line">npm install hexo-deployer-git --save、</div><div class="line">多了一个、居然成功了？！</div></pre></td></tr></table></figure></p>
+<ul>
+<li>邮箱 ：itgoyo@gmail.com</li>
+<li>Good Luck!</li>
+</ul>
+<hr>
+<div align="center"><br><br>发现更多有趣好玩的，欢迎关注我的微信公众号<br><br><img src="/assets/getqrcode.jpeg" alt=""><br></div>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    最後更新時間：<time datetime="2017-12-28T12:15:24.000Z" itemprop="dateUpdated">2017-12-28 20:15:24</time>
+</span><br>
+
+
+        
+    </div>
+    <footer>
+        <a href="https://github.com/itgoyo">
+            <img src="/img/kotlin_250x250.jpg" alt="itgoyo">
+            itgoyo
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Program/">Program</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://github.com/itgoyo/2019/12/28/在Github上使用Hexo搭建个人博客.html&title=《在Github上使用Hexo搭建个人博客》 — ITGOYO技术站&pic=https://github.com/itgoyo/img/kotlin_250x250.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://github.com/itgoyo/2019/12/28/在Github上使用Hexo搭建个人博客.html&title=《在Github上使用Hexo搭建个人博客》 — ITGOYO技术站&source=成品示例展示：https://itgoyo.github.io/
+
+1、Hexo搭建环境一、环境安装
+
+node.js（在node.js官网中下载安装）n..." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://github.com/itgoyo/2019/12/28/在Github上使用Hexo搭建个人博客.html" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《在Github上使用Hexo搭建个人博客》 — ITGOYO技术站&url=https://github.com/itgoyo/2019/12/28/在Github上使用Hexo搭建个人博客.html&via=https://github.com/itgoyo" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://github.com/itgoyo/2019/12/28/在Github上使用Hexo搭建个人博客.html" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2017/12/28/Ubuntu安装完之后所需要做的配置.html" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Ubuntu安装完之后所需要做的配置</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+<section class="comments" id="comments">
+    <div id="disqus_thread"></div>
+    <script>
+    var disqus_shortname = 'itgoyo';
+    lazyScripts.push('//' + disqus_shortname + '.disqus.com/embed.js')
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitment_thread"></div>
+    <link rel="stylesheet" href="//unpkg.com/gitment/style/default.css">
+    <!-- <script src="//unpkg.com/gitment/dist/gitment.browser.js"></script> -->
+    <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+    <script>
+        var gitment = new Gitment({
+            owner: 'itgoyo',
+            repo: 'itgoyo.github.io',
+            oauth: {
+                client_id: '464e7c112346fd6daabb',
+                client_secret: '3f78aa47b168a9788b888238a610dff1ac6e51ac',
+            },
+        })
+        gitment.render('comments')
+    </script>
+</section>
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        奖励一杯咖啡!
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/assets/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/assets/img/wechat.jpg" data-alipay="/assets/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+
+    <div class="bottom">
+  
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            <span>itgoyo &copy; 2017</span>  &nbsp&nbsp&nbsp 作者Github地址 欢迎关注 <a href="https://github.com/itgoyo" target="_blank">itgoyo</a>
+              <a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a>
+        </p>
+        <p>
+        感谢西部数码提供<a href="http://www.west.cn/index.asp?ReferenceID=1232730"
+        target="_blank">虚拟主机</a>
+        </p>
+        <p>
+            <span>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://github.com/itgoyo/2019/12/28/在Github上使用Hexo搭建个人博客.html&title=《在Github上使用Hexo搭建个人博客》 — ITGOYO技术站&pic=https://github.com/itgoyo/img/kotlin_250x250.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://github.com/itgoyo/2019/12/28/在Github上使用Hexo搭建个人博客.html&title=《在Github上使用Hexo搭建个人博客》 — ITGOYO技术站&source=成品示例展示：https://itgoyo.github.io/
+
+1、Hexo搭建环境一、环境安装
+
+node.js（在node.js官网中下载安装）n..." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://github.com/itgoyo/2019/12/28/在Github上使用Hexo搭建个人博客.html" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《在Github上使用Hexo搭建个人博客》 — ITGOYO技术站&url=https://github.com/itgoyo/2019/12/28/在Github上使用Hexo搭建个人博客.html&via=https://github.com/itgoyo" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://github.com/itgoyo/2019/12/28/在Github上使用Hexo搭建个人博客.html" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACvElEQVR42u3aS3LcMAwFQN//0s42riTyewDpaNFaTc1HQnNBYgB8fMTX529X++nz9//81b8+ze9fX3h4eHiL0J9v/RxWHlyyHM/fT2LGw8PDu81LHpAAnt/PMc8HTxIzHh4e3tt4eTbbptSb9BoPDw/vnbzZhp4fIclhgIeHh/cGXlKMeE6R8+8UpYSfrLXg4eHhdXcokuM3vL7S38PDw8Nbd9XzLXs/HJCn7EW0eHh4eBd4+Yabs2dl2edyxixOPDw8vBu8vPSQBJEPDcwKEElh4kuEeHh4eBd4szR3NgSQp+ObakN9suHh4eGteW0QSdssb/nnY1j1b/Hw8PCu8fbJbltcmBWLjzXD8PDw8Epeu2XnG/qsINs2t755Oh4eHt5lXlsqPVWWzT+tU388PDy8C7zZg/OBqjaNLjb9fHHx8PDwjvLyoNvCbg6bLVBS4MDDw8O7wWvLCkko+1GAvOxbpN14eHh4R3ktbFNgbQNtD5Wos4eHh4d3lHeqhLpphuWDAtFQFx4eHt5RXl5UbbfpvKgxa6pFYDw8PLwLvHarTRhJmpun2nk6HqXaeHh4eGteW7TN22CbMYJZaTj6r4CHh4e35iXbfT72VDTyF4t7YKYMDw8P7xDvRms/HzuYHSFR/Hh4eHjXeJtBgdl9hilyXFbGw8PD+3lenuzmo1o3RhNWxQg8PDy8NW/W7ko2/XwIoD1yvnkKHh4e3mXegcGmo+l1m3xHVWo8PDy8Be+zvPJA27JF0jxL7vnlNR4eHt4FXjvSNBsLaJdg83p44eHh4ZW8zWGQU/MsN//tsIyLh4eHd4iX/8nfJNmzBWqLEX8pSeDh4eH9V17b2s+XJn96sRB4eHh4L+Dlo1H7hDtJ/a+k1Hh4eHiHihFnhwmeY9jv9nh4eHj3eJs//PvG1WwAa5Vk4+Hh4c15vwCNV6ZL9XVYhAAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+
+lazyScripts.push('//s95.cnzz.com/z_stat.php?id=1261686164&web_id=1261686164')
+
+</script>
+
+<script src="/js/main.min.js?v=1.5.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.5.2" async></script>
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+</body>
+</html>
