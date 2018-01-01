@@ -58,7 +58,7 @@
 <meta property="og:image" content="http://omvbl46i3.bkt.clouddn.com/3f43378ea9f38feb6e2e2e70ef709230.png">
 <meta property="og:image" content="http://omvbl46i3.bkt.clouddn.com/b7f79cd696dc5f2404cbe14b98e9dfdc.png">
 <meta property="og:image" content="https://github.com/assets/getqrcode.jpeg">
-<meta property="og:updated_time" content="2017-11-24T16:19:44.000Z">
+<meta property="og:updated_time" content="2018-01-01T14:57:14.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="给初学者的RxJava2教程">
 <meta name="twitter:description" content="Rxjava2入门最通俗易懂的教程">
@@ -406,7 +406,7 @@ var _hmt = _hmt || [];
 <h2 id="读写数据库"><a href="#读写数据库" class="headerlink" title="读写数据库"></a>读写数据库</h2><p>上面说了网络请求的例子, 接下来再看看读写数据库, 读写数据库也算一个耗时的操作, 因此我们也最好放在IO线程里去进行, 这个例子就比较简单, 直接上代码:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">public Observable&lt;List&lt;Record&gt;&gt; readAllRecords() &#123;</div><div class="line">        return Observable.create(new ObservableOnSubscribe&lt;List&lt;Record&gt;&gt;() &#123;</div><div class="line">            @Override</div><div class="line">            public void subscribe(ObservableEmitter&lt;List&lt;Record&gt;&gt; emitter) throws Exception &#123;</div><div class="line">                Cursor cursor = null;</div><div class="line">                try &#123;</div><div class="line">                    cursor = getReadableDatabase().rawQuery(&quot;select * from &quot; + TABLE_NAME, new String[]&#123;&#125;);</div><div class="line">                    List&lt;Record&gt; result = new ArrayList&lt;&gt;();</div><div class="line">                    while (cursor.moveToNext()) &#123;</div><div class="line">                        result.add(Db.Record.read(cursor));</div><div class="line">                    &#125;</div><div class="line">                    emitter.onNext(result);</div><div class="line">                    emitter.onComplete();</div><div class="line">                &#125; finally &#123;</div><div class="line">                    if (cursor != null) &#123;</div><div class="line">                        cursor.close();</div><div class="line">                    &#125;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());</div><div class="line">    &#125;</div></pre></td></tr></table></figure></p>
 <p>好了本次的教程就到这里吧, 后面的教程将会教大家如何使用RxJava中强大的操作符. 通过使用这些操作符可以很轻松的做到各种吊炸天的效果. 敬请期待.</p>
 <hr>
-<div align="center"><br><br>发现更多有趣好玩的，欢迎关注我的微信公众号<br><br><img src="/assets/getqrcode.jpeg" alt=""></div>
+<div align="center"><br>欢迎关注我的 Github：itgoyo<br><br><br>发现更多有趣好玩的，欢迎关注我的微信公众号<br><br><img src="/assets/getqrcode.jpeg" alt=""></div>
 
         </div>
 
@@ -414,7 +414,7 @@ var _hmt = _hmt || [];
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2017-11-24T16:19:44.000Z" itemprop="dateUpdated">2017-11-25 00:19:44</time>
+    Last updated: <time datetime="2018-01-01T14:57:14.000Z" itemprop="dateUpdated">2018-01-01 22:57:14</time>
 </span><br>
 
 

@@ -53,7 +53,7 @@
 <meta property="og:description" content="文章是参照博客园的一篇文章博文链接来做的笔记。 什么是多态？多态是同一个行为具有多个不同表现形式或形态的能力。菜鸟教程 多态就是同一个接口，使用不同的实例而执行不同操作，如图所示：  多态性是对象多种表现形式的体现。  现实中，比如我们按下 F1 键这个动作：  如果当前在 Flash 界面下弹出的就是 AS 3 的帮助文档； 如果当前在 Word 下弹出的就是 Word 帮助； 在 Window">
 <meta property="og:image" content="http://omvbl46i3.bkt.clouddn.com/17-10-27/8493448.jpg">
 <meta property="og:image" content="https://github.com/assets/getqrcode.jpeg">
-<meta property="og:updated_time" content="2017-11-23T13:06:43.000Z">
+<meta property="og:updated_time" content="2018-01-01T14:56:16.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java多态的理解">
 <meta name="twitter:description" content="文章是参照博客园的一篇文章博文链接来做的笔记。 什么是多态？多态是同一个行为具有多个不同表现形式或形态的能力。菜鸟教程 多态就是同一个接口，使用不同的实例而执行不同操作，如图所示：  多态性是对象多种表现形式的体现。  现实中，比如我们按下 F1 键这个动作：  如果当前在 Flash 界面下弹出的就是 AS 3 的帮助文档； 如果当前在 Word 下弹出的就是 Word 帮助； 在 Window">
@@ -311,7 +311,7 @@ var _hmt = _hmt || [];
 <p>答案<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">①   A and A</div><div class="line">②   A and A</div><div class="line">③   A and D</div><div class="line">④   B and A</div><div class="line">⑤   B and A</div><div class="line">⑥   A and D</div><div class="line">⑦   B and B</div><div class="line">⑧   B and B</div><div class="line">⑨   A and D</div></pre></td></tr></table></figure></p>
 <p>答案解析<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">1.实例对象为A，参数为对象B，B为A的子类。执行A.class中show(A obj)</div><div class="line">2.同上</div><div class="line">3.实例对象为A，参数为对象D，执行A.class中show(D obj)</div><div class="line">4.实例对象依然为A，参数为B，本应执行A.class中show(A obj)，但是，B.class重写了show(A obj),所以执行B.class show(A obj)</div><div class="line">5.同上</div><div class="line">6.执行A.class show(D obj) B中并没有重写。</div><div class="line">7，8.实例对象为B，参数为B或者B的子类，执行show(B obj)</div><div class="line">9.实例对象为B，参数为D，因为B继承自A，也可以执行A中的show(D obj)</div></pre></td></tr></table></figure></p>
 <hr>
-<div align="center"><br><br>发现更多有趣好玩的，欢迎关注我的微信公众号<br><br><img src="/assets/getqrcode.jpeg" alt=""><br></div>
+<div align="center"><br>欢迎关注我的 Github：itgoyo<br><br><br>发现更多有趣好玩的，欢迎关注我的微信公众号<br><br><img src="/assets/getqrcode.jpeg" alt=""><br></div>
 
         </div>
 
@@ -319,7 +319,7 @@ var _hmt = _hmt || [];
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2017-11-23T13:06:43.000Z" itemprop="dateUpdated">2017-11-23 21:06:43</time>
+    Last updated: <time datetime="2018-01-01T14:56:16.000Z" itemprop="dateUpdated">2018-01-01 22:56:16</time>
 </span><br>
 
 
